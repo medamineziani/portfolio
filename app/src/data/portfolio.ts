@@ -168,6 +168,21 @@ export const projects: Project[] = [
     icon: "ShoppingBag",
     githubUrl: "https://github.com/medamineziani/fruizy",
   },
+  {
+    title: {
+      fr: "Agent IA de recherche de logement",
+      en: "AI Apartment-Search Agent",
+    },
+    organization: { fr: "Projet personnel", en: "Personal project" },
+    year: "2026",
+    description: {
+      fr: "Agent piloté par Claude qui surveille Leboncoin, SeLoger et BienIci pour une recherche de logement, rédige des messages de candidature personnalisés, et ne les envoie qu'après validation humaine explicite. Pilotage du navigateur via l'extension Claude in Chrome et exécution planifiée.",
+      en: "Claude-powered agent that monitors Leboncoin, SeLoger, and BienIci for an apartment search, drafts personalized application messages, and only sends them after explicit human approval. Browser automation via the Claude in Chrome extension with scheduled runs.",
+    },
+    tags: ["Claude Agent SDK", "Automatisation", "Claude in Chrome", "Tâches planifiées"],
+    icon: "Home",
+    githubUrl: null,
+  },
 ];
 
 export const responsibilities = [

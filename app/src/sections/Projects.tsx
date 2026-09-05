@@ -5,6 +5,7 @@ import {
   ScanEye,
   ShoppingBag,
   LineChart,
+  Home,
   Code2,
   Github,
   Calendar,
@@ -20,6 +21,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   ScanEye,
   ShoppingBag,
   LineChart,
+  Home,
 };
 
 export default function Projects() {
