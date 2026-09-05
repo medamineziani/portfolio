@@ -4,6 +4,7 @@ export const nav = {
   home: { fr: "Accueil", en: "Home" } as Bilingual,
   about: { fr: "À propos", en: "About" } as Bilingual,
   education: { fr: "Formation", en: "Education" } as Bilingual,
+  internships: { fr: "Stages", en: "Internships" } as Bilingual,
   projects: { fr: "Projets", en: "Projects" } as Bilingual,
   skills: { fr: "Compétences", en: "Skills" } as Bilingual,
   contact: { fr: "Contact", en: "Contact" } as Bilingual,
@@ -30,6 +31,15 @@ export const about = {
 export const education = {
   badge: { fr: "Formation", en: "Education" } as Bilingual,
   title: { fr: "Mon Parcours Académique", en: "Academic Background" } as Bilingual,
+};
+
+export const internships = {
+  badge: { fr: "Stages", en: "Internships" } as Bilingual,
+  title: { fr: "Expérience Professionnelle", en: "Work Experience" } as Bilingual,
+  subtitle: {
+    fr: "Mes stages en entreprise, entre développement logiciel, réseaux et vision par ordinateur.",
+    en: "My company internships, spanning software development, networking, and computer vision.",
+  } as Bilingual,
 };
 
 export const projects = {

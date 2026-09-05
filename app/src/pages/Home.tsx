@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/sections/Hero";
 import About from "@/sections/About";
 import Education from "@/sections/Education";
+import Internships from "@/sections/Internships";
 import Projects from "@/sections/Projects";
 import Skills from "@/sections/Skills";
 import Experience from "@/sections/Experience";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <About />
         <Education />
+        <Internships />
         <Projects />
         <Skills />
         <Experience />

@@ -102,7 +102,7 @@ export const projects: Project[] = [
   {
     title: { fr: "Deadlift AI", en: "Deadlift AI" },
     organization: { fr: "Projet personnel", en: "Personal project" },
-    year: "2025",
+    year: "2026",
     description: {
       fr: "Analyse vidéo en temps réel du mouvement de deadlift : estimation de pose (YOLO11), calcul des angles articulaires, suivi de la trajectoire de la barre, et rapport de coaching PDF généré par l'API Claude.",
       en: "Real-time deadlift video analysis: pose estimation (YOLO11), joint-angle computation, barbell trajectory tracking, and an AI-generated (Claude API) PDF coaching report.",
@@ -117,7 +117,7 @@ export const projects: Project[] = [
       en: "PowerForm AI",
     },
     organization: { fr: "Projet personnel", en: "Personal project" },
-    year: "2025",
+    year: "2026",
     description: {
       fr: "MVP SaaS complet d'analyse vidéo de powerlifting par IA : authentification et base de données Supabase, paiements Stripe, analyse par l'API Claude et génération de rapports PDF, déployé sur Vercel.",
       en: "Full SaaS MVP for AI-powered powerlifting video analysis: Supabase auth & database, Stripe payments, Claude API analysis, and PDF report generation — deployed on Vercel.",
@@ -131,11 +131,11 @@ export const projects: Project[] = [
       fr: "Contrôle Qualité Vidéo des Palettes",
       en: "Pallet Video Quality Control",
     },
-    organization: { fr: "Projet personnel", en: "Personal project" },
-    year: "2025",
+    organization: { fr: "Stage AGRIDATA CONSULTING · PackOne", en: "AGRIDATA CONSULTING Internship · PackOne" },
+    year: "2026",
     description: {
-      fr: "Proof of concept Python/OpenCV validant automatiquement, à partir d'une vidéo de palettisation, la conformité du colisage (nombre de couches, hauteur, emprise au sol) par rapport à un référentiel — verdict CONFORME / NON CONFORME avec écarts mesurés.",
-      en: "Python/OpenCV proof of concept that automatically validates pallet packaging conformity (carton layer count, height, footprint) from a palletizing video against a reference spec — CONFORMING / NON-CONFORMING verdict with measured deviations.",
+      fr: "PoC Python/OpenCV développé lors d'un stage Industrie 4.0 chez AGRIDATA CONSULTING (équipe PackOne) : contrôle automatisé de la hauteur et du nombre de couches de cartons d'une palette à partir d'une caméra en plongée sur la ligne de palettisation, validé par rapport à une configuration de référence par type de palette.",
+      en: "Python/OpenCV PoC built during an Industry 4.0 internship at AGRIDATA CONSULTING (PackOne team): automated control of pallet height and carton-layer count from an overhead camera on the palletizing line, validated against a reference pallet-type configuration.",
     },
     tags: ["Python", "OpenCV", "Vision par ordinateur", "Industrie 4.0", "Tests unitaires"],
     icon: "ScanEye",
@@ -146,20 +146,20 @@ export const projects: Project[] = [
       fr: "Simulateur IoT & Routage Réseau",
       en: "IoT Simulator & Network Routing",
     },
-    organization: { fr: "ENSEEIHT", en: "ENSEEIHT" },
-    year: "2025",
+    organization: { fr: "Stage AGRIDATA CONSULTING · PackOne", en: "AGRIDATA CONSULTING Internship · PackOne" },
+    year: "2026",
     description: {
-      fr: "Projet académique combinant un simulateur IoT client/serveur (sockets TCP, Python) pour une station de pesée industrielle, et une infrastructure réseau Cisco complète (routage, DNS, DHCP, NAT).",
-      en: "Academic project combining a client/server IoT simulator (Python TCP sockets) for an industrial weighing station with a full Cisco network infrastructure (routing, DNS, DHCP, NAT).",
+      fr: "Projet réalisé lors du même stage : simulateur client/serveur Python/C (sockets TCP/IP) d'une balance industrielle et d'un scanner de palettes, et conception de l'infrastructure réseau cible sous Cisco Packet Tracer (segmentation VLAN, routage dynamique OSPF, politique QoS pour prioriser le trafic de pesée temps réel) pour une station de conditionnement.",
+      en: "Project built during the same internship: a Python/C client-server simulator (TCP/IP sockets) for an industrial scale and pallet scanner, plus the target network design in Cisco Packet Tracer (VLAN segmentation, OSPF dynamic routing, QoS policy prioritizing real-time weighing traffic) for a packaging station.",
     },
-    tags: ["Python", "TCP/IP", "Sockets", "Cisco IOS", "Réseaux"],
+    tags: ["Python", "C", "TCP/IP", "Sockets", "Cisco Packet Tracer", "VLAN", "OSPF", "QoS"],
     icon: "Network",
     githubUrl: "https://github.com/medamineziani/iot-weighing-network-sim",
   },
   {
     title: { fr: "Fruizy", en: "Fruizy" },
     organization: { fr: "Projet personnel", en: "Personal project" },
-    year: "2025",
+    year: "2026",
     description: {
       fr: "Landing page marketing pour Fruizy, une marque de smoothies aux fruits congelés (Agadir, Maroc). Site vitrine mono-page en HTML/CSS pur, orienté conversion vers la commande WhatsApp.",
       en: "Marketing landing page for Fruizy, a frozen-fruit smoothie brand (Agadir, Morocco). Single-page vanilla HTML/CSS site optimized for WhatsApp-order conversion.",
@@ -189,7 +189,7 @@ export const projects: Project[] = [
       en: "Cybersecurity Lab",
     },
     organization: { fr: "Auto-formation", en: "Self-study" },
-    year: "2025",
+    year: "2026",
     description: {
       fr: "Environnement de pentest personnel (VM Kali Linux + cible Ubuntu, VirtualBox) pour l'auto-formation aux tests d'intrusion : reconnaissance, exploitation et post-exploitation dans un cadre isolé et légal.",
       en: "Personal pentesting environment (Kali Linux VM + Ubuntu target, VirtualBox) for self-study in penetration testing: reconnaissance, exploitation, and post-exploitation in an isolated, legal setting.",
@@ -197,6 +197,62 @@ export const projects: Project[] = [
     tags: ["Kali Linux", "VirtualBox", "Pentest", "Auto-formation"],
     icon: "Shield",
     githubUrl: null,
+  },
+];
+
+export interface Internship {
+  role: Bilingual;
+  company: string;
+  companyType: Bilingual;
+  period: Bilingual;
+  location: Bilingual;
+  summary: Bilingual;
+  highlights: Bilingual[];
+  skillTag: Bilingual;
+}
+
+export const internships: Internship[] = [
+  {
+    role: { fr: "Ingénieur Informatique", en: "Computer Engineer" },
+    company: "AGRIDATA CONSULTING",
+    companyType: { fr: "Stage", en: "Internship" },
+    period: { fr: "Juil. 2026 - Présent · 3 mois", en: "Jul 2026 - Present · 3 mos" },
+    location: { fr: "Région d'Agadir · Hybride", en: "Agadir Metropolitan Area · Hybrid" },
+    summary: {
+      fr: "Stage de fin de première année à l'ENSEEIHT, sur deux projets Industrie 4.0 combinant programmation système, réseaux et vision par ordinateur au sein de l'équipe PackOne.",
+      en: "End-of-first-year internship at ENSEEIHT, working on two Industry 4.0 projects combining systems programming, networking, and computer vision within the PackOne team.",
+    },
+    highlights: [
+      {
+        fr: "Simulateur IoT industriel en Python/C : simulation continue d'une balance industrielle et d'un scanner de palettes (poids brut, identifiant de contenant) via sockets TCP/IP, en architecture client/serveur.",
+        en: "Built an IoT industrial weighing simulator in Python/C: continuous simulation of an industrial scale and a pallet scanner (gross weight, container ID) over TCP/IP sockets, in a client/server architecture.",
+      },
+      {
+        fr: "Conception de l'infrastructure réseau cible d'une station de conditionnement sous Cisco Packet Tracer : segmentation VLAN, routage dynamique OSPF et politique QoS pour prioriser le trafic de pesée temps réel.",
+        en: "Designed the target network infrastructure of a packaging station in Cisco Packet Tracer: VLAN segmentation, OSPF dynamic routing, and a QoS policy to prioritize real-time weighing traffic.",
+      },
+      {
+        fr: "Développement d'un prototype d'analyse vidéo (PoC) en Python/OpenCV : contrôle automatisé de la conformité et de l'intégrité des palettes (hauteur, nombre de couches de cartons) à partir d'une caméra en plongée, validé par rapport à une configuration de référence par type de palette.",
+        en: "Developed a video analysis prototype (PoC) in Python/OpenCV: automated control of pallet conformity and integrity (height, number of carton layers) from an overhead camera feed, validated against a reference pallet-type configuration.",
+      },
+    ],
+    skillTag: { fr: "Ingénierie", en: "Engineering" },
+  },
+  {
+    role: {
+      fr: "Ingénieur Réseaux IT",
+      en: "Information Technology Network Engineer",
+    },
+    company: "FIRST COMPÉTENCE",
+    companyType: { fr: "Stage", en: "Internship" },
+    period: { fr: "Juin 2026 · 1 mois", en: "Jun 2026 · 1 mo" },
+    location: { fr: "Agadir · Sur site", en: "Agadir · On-site" },
+    summary: {
+      fr: "Travail sur l'infrastructure IT et l'administration réseau : analyse de l'architecture réseau, adressage IP, VLANs, configuration DHCP/DNS, dépannage et sécurité réseau. Contribution à la documentation et à l'optimisation de l'infrastructure IT de l'entreprise.",
+      en: "Worked on IT infrastructure and network administration, including network architecture analysis, IP addressing, VLANs, DHCP/DNS configuration, troubleshooting, and network security. Contributed to documenting and optimizing the company's IT infrastructure.",
+    },
+    highlights: [],
+    skillTag: { fr: "Réseaux", en: "Networking" },
   },
 ];
 
