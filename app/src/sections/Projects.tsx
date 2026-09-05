@@ -6,6 +6,7 @@ import {
   ShoppingBag,
   LineChart,
   Home,
+  Shield,
   Code2,
   Github,
   Calendar,
@@ -22,6 +23,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   ShoppingBag,
   LineChart,
   Home,
+  Shield,
 };
 
 export default function Projects() {

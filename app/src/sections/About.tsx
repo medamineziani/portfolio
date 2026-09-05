@@ -78,7 +78,7 @@ export default function About() {
 
   const stats = [
     { value: "4", label: aboutText.statLanguages },
-    { value: "6+", label: aboutText.statProjects },
+    { value: "7+", label: aboutText.statProjects },
     { value: "2", label: aboutText.statResponsibilities },
   ];
 

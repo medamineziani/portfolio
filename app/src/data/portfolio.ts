@@ -183,6 +183,21 @@ export const projects: Project[] = [
     icon: "Home",
     githubUrl: null,
   },
+  {
+    title: {
+      fr: "Laboratoire de Cybersécurité",
+      en: "Cybersecurity Lab",
+    },
+    organization: { fr: "Auto-formation", en: "Self-study" },
+    year: "2025",
+    description: {
+      fr: "Environnement de pentest personnel (VM Kali Linux + cible Ubuntu, VirtualBox) pour l'auto-formation aux tests d'intrusion : reconnaissance, exploitation et post-exploitation dans un cadre isolé et légal.",
+      en: "Personal pentesting environment (Kali Linux VM + Ubuntu target, VirtualBox) for self-study in penetration testing: reconnaissance, exploitation, and post-exploitation in an isolated, legal setting.",
+    },
+    tags: ["Kali Linux", "VirtualBox", "Pentest", "Auto-formation"],
+    icon: "Shield",
+    githubUrl: null,
+  },
 ];
 
 export const responsibilities = [
@@ -249,7 +264,6 @@ export const interests = [
   { name: { fr: "LeetCode", en: "LeetCode" } as Bilingual, icon: "Terminal" },
   { name: { fr: "Codeforces", en: "Codeforces" } as Bilingual, icon: "Trophy" },
   { name: { fr: "Veille IA", en: "AI Trends" } as Bilingual, icon: "Brain" },
-  { name: { fr: "Cybersécurité", en: "Cybersecurity" } as Bilingual, icon: "Shield" },
   { name: { fr: "Open Source", en: "Open Source" } as Bilingual, icon: "Github" },
   { name: { fr: "Powerlifting", en: "Powerlifting" } as Bilingual, icon: "Dumbbell" },
   { name: { fr: "Natation", en: "Swimming" } as Bilingual, icon: "Waves" },
