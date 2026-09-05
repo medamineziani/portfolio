@@ -18,6 +18,7 @@ const interestIconMap: Record<string, React.ComponentType<{ className?: string }
   Waves,
   Goal: Target,
   Atom,
+  Shield,
 };
 
 import {
@@ -29,6 +30,7 @@ import {
   Waves,
   Target,
   Atom,
+  Shield,
 } from "lucide-react";
 
 export default function Experience() {

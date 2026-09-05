@@ -249,6 +249,7 @@ export const interests = [
   { name: { fr: "LeetCode", en: "LeetCode" } as Bilingual, icon: "Terminal" },
   { name: { fr: "Codeforces", en: "Codeforces" } as Bilingual, icon: "Trophy" },
   { name: { fr: "Veille IA", en: "AI Trends" } as Bilingual, icon: "Brain" },
+  { name: { fr: "Cybersécurité", en: "Cybersecurity" } as Bilingual, icon: "Shield" },
   { name: { fr: "Open Source", en: "Open Source" } as Bilingual, icon: "Github" },
   { name: { fr: "Powerlifting", en: "Powerlifting" } as Bilingual, icon: "Dumbbell" },
   { name: { fr: "Natation", en: "Swimming" } as Bilingual, icon: "Waves" },
