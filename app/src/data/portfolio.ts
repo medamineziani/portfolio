@@ -18,8 +18,8 @@ export const personalInfo = {
   email: "medamine.ziani85@gmail.com",
   phone: "+33 7 73 96 39 17",
   address: "12 rue des Blanchers, Toulouse",
-  linkedin: "linkedin.com/in/m-a-ziani",
-  linkedinUrl: "https://linkedin.com/in/m-a-ziani",
+  linkedin: "linkedin.com/in/mohamed-amine-ziani-a4698935b",
+  linkedinUrl: "https://www.linkedin.com/in/mohamed-amine-ziani-a4698935b",
   github: "github.com/medamineziani",
   githubUrl: "https://github.com/medamineziani",
   availability: {
