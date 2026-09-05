@@ -1,18 +1,42 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X, Code2, Languages } from "lucide-react";
+import { useLanguage, type Lang, t } from "@/lib/i18n";
+import { nav } from "@/data/uiText";
 
-const navLinks = [
-  { label: "Accueil", href: "#hero" },
-  { label: "À propos", href: "#about" },
-  { label: "Formation", href: "#education" },
-  { label: "Projets", href: "#projects" },
-  { label: "Compétences", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
+function LangToggle({
+  lang,
+  onToggle,
+  className = "",
+}: {
+  lang: Lang;
+  onToggle: () => void;
+  className?: string;
+}) {
+  return (
+    <button
+      onClick={onToggle}
+      aria-label={lang === "fr" ? "Switch to English" : "Passer en français"}
+      className={`flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-gray-400 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5 ${className}`}
+    >
+      <Languages className="w-4 h-4" />
+      {lang === "fr" ? "FR" : "EN"}
+    </button>
+  );
+}
 
 export default function Navbar() {
+  const { lang, toggleLang } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = [
+    { label: t(nav.home, lang), href: "#hero" },
+    { label: t(nav.about, lang), href: "#about" },
+    { label: t(nav.education, lang), href: "#education" },
+    { label: t(nav.projects, lang), href: "#projects" },
+    { label: t(nav.skills, lang), href: "#skills" },
+    { label: t(nav.contact, lang), href: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,23 +90,27 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* Language Toggle + CTA Button */}
+          <div className="hidden md:flex items-center gap-2">
+            <LangToggle lang={lang} onToggle={toggleLang} />
             <button
               onClick={() => scrollTo("#contact")}
               className="px-4 py-2 text-sm font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-all"
             >
-              Me contacter
+              {t(nav.contactCta, lang)}
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-gray-400 hover:text-white"
-          >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+          {/* Mobile: Lang Toggle + Menu Button */}
+          <div className="flex items-center gap-1 md:hidden">
+            <LangToggle lang={lang} onToggle={toggleLang} className="px-2" />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 text-gray-400 hover:text-white"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -103,7 +131,7 @@ export default function Navbar() {
               onClick={() => scrollTo("#contact")}
               className="w-full mt-2 px-4 py-2.5 text-sm font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-all"
             >
-              Me contacter
+              {t(nav.contactCta, lang)}
             </button>
           </div>
         </div>

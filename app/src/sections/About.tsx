@@ -1,30 +1,45 @@
 import { useEffect, useRef, useState } from "react";
 import { User, Target, Rocket, BookOpen } from "lucide-react";
+import { useLanguage, t, type Bilingual } from "@/lib/i18n";
+import { about as aboutText } from "@/data/uiText";
 
-const highlights = [
+const highlights: { icon: typeof User; title: Bilingual; description: Bilingual }[] = [
   {
     icon: BookOpen,
-    title: "Formation d'excellence",
-    description: "CPGE scientifiques au Maroc, actuellement en 1ère année à l'ENSEEIHT",
+    title: { fr: "Formation d'excellence", en: "Excellence-driven education" },
+    description: {
+      fr: "CPGE scientifiques au Maroc, actuellement en 1ère année à l'ENSEEIHT",
+      en: "Scientific CPGE in Morocco, currently in 1st year at ENSEEIHT",
+    },
   },
   {
     icon: Target,
-    title: "Orienté résultats",
-    description: "Passionné par le développement logiciel, l'algorithmique et l'IA",
+    title: { fr: "Orienté résultats", en: "Results-oriented" },
+    description: {
+      fr: "Passionné par le développement logiciel, l'algorithmique et l'IA",
+      en: "Passionate about software development, algorithms, and AI",
+    },
   },
   {
     icon: Rocket,
-    title: "Projets concrets",
-    description: "Expérience en vision par ordinateur, réseaux et développement collaboratif",
+    title: { fr: "Projets concrets", en: "Hands-on projects" },
+    description: {
+      fr: "Expérience en vision par ordinateur, réseaux et développement collaboratif",
+      en: "Experience in computer vision, networking, and collaborative development",
+    },
   },
   {
     icon: User,
-    title: "Leadership",
-    description: "Responsable de club académique et délégué de classe",
+    title: { fr: "Leadership", en: "Leadership" },
+    description: {
+      fr: "Responsable de club académique et délégué de classe",
+      en: "Academic club lead and class representative",
+    },
   },
 ];
 
 export default function About() {
+  const { lang } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -46,6 +61,27 @@ export default function About() {
     return () => observer.disconnect();
   }, []);
 
+  const bioParagraphs: Bilingual[] = [
+    {
+      fr: "Je suis Mohamed Amine Ziani, étudiant ingénieur de 20 ans en première année à l'ENSEEIHT (Sciences du Numérique) à Toulouse, issu des classes préparatoires aux grandes écoles scientifiques au Maroc.",
+      en: "I'm Mohamed Amine Ziani, a 20-year-old first-year engineering student at ENSEEIHT (Digital Sciences) in Toulouse, coming from scientific preparatory classes for engineering schools in Morocco.",
+    },
+    {
+      fr: "Rigoureux et passionné par le développement logiciel, l'algorithmique et l'intelligence artificielle, je recherche un stage pour consolider mes compétences dans un environnement professionnel stimulant.",
+      en: "Rigorous and passionate about software development, algorithms, and artificial intelligence, I'm looking for an internship to strengthen my skills in a stimulating professional environment.",
+    },
+    {
+      fr: "Mon parcours m'a permis de développer une solide base en programmation (Python, C, Java), en vision par ordinateur et en réseaux, tout en cultivant des qualités de leadership à travers mes engagements associatifs.",
+      en: "My journey has given me a solid foundation in programming (Python, C, Java), computer vision, and networking, while cultivating leadership qualities through my community involvement.",
+    },
+  ];
+
+  const stats = [
+    { value: "4", label: aboutText.statLanguages },
+    { value: "5+", label: aboutText.statProjects },
+    { value: "2", label: aboutText.statResponsibilities },
+  ];
+
   return (
     <section
       id="about"
@@ -63,10 +99,10 @@ export default function About() {
           }`}
         >
           <span className="inline-block px-3 py-1 text-xs font-medium text-cyan-400 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-4">
-            À propos
+            {t(aboutText.badge, lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Qui suis-je ?
+            {t(aboutText.title, lang)}
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto" />
         </div>
@@ -80,34 +116,18 @@ export default function About() {
           >
             <div className="glass rounded-2xl p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-white mb-4">
-                Étudiant ingénieur passionné par le numérique
+                {t(aboutText.cardTitle, lang)}
               </h3>
               <div className="space-y-4 text-gray-400 leading-relaxed">
-                <p>
-                  Je suis <span className="text-cyan-400 font-medium">Mohamed Amine Ziani</span>,
-                  étudiant ingénieur de 20 ans en première année à l'ENSEEIHT (Sciences du Numérique)
-                  à Toulouse, issu des classes préparatoires aux grandes écoles scientifiques au Maroc.
-                </p>
-                <p>
-                  Rigoureux et passionné par le développement logiciel, l'algorithmique et l'intelligence
-                  artificielle, je recherche un stage pour consolider mes compétences dans un environnement
-                  professionnel stimulant.
-                </p>
-                <p>
-                  Mon parcours m'a permis de développer une solide base en programmation (Python, C, Java),
-                  en vision par ordinateur et en réseaux, tout en cultivant des qualités de leadership
-                  à travers mes engagements associatifs.
-                </p>
+                {bioParagraphs.map((p, i) => (
+                  <p key={i}>{t(p, lang)}</p>
+                ))}
               </div>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
-              {[
-                { value: "4", label: "Langues" },
-                { value: "4+", label: "Projets" },
-                { value: "2", label: "Responsabilités" },
-              ].map((stat, i) => (
+              {stats.map((stat, i) => (
                 <div
                   key={i}
                   className="glass rounded-xl p-4 text-center"
@@ -115,7 +135,7 @@ export default function About() {
                   <div className="text-2xl sm:text-3xl font-bold text-gradient">
                     {stat.value}
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
+                  <div className="text-xs text-gray-500 mt-1">{t(stat.label, lang)}</div>
                 </div>
               ))}
             </div>
@@ -137,10 +157,10 @@ export default function About() {
                   <item.icon className="w-5 h-5 text-cyan-400" />
                 </div>
                 <h4 className="text-sm font-semibold text-white mb-1">
-                  {item.title}
+                  {t(item.title, lang)}
                 </h4>
                 <p className="text-xs text-gray-500 leading-relaxed">
-                  {item.description}
+                  {t(item.description, lang)}
                 </p>
               </div>
             ))}

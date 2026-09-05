@@ -1,9 +1,12 @@
 import { useEffect, useRef } from "react";
 import { MapPin, Mail, Phone, Linkedin, ChevronDown, Sparkles } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import { useLanguage, t } from "@/lib/i18n";
+import { hero } from "@/data/uiText";
 import profileImage from "../assets/ziani.jpg";
 
 export default function Hero() {
+  const { lang } = useLanguage();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -117,7 +120,7 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl z-[1]" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-24 sm:pt-20 text-center">
         {/* Availability Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-glow mb-8 animate-fade-in">
           <span className="relative flex h-2.5 w-2.5">
@@ -126,7 +129,7 @@ export default function Hero() {
           </span>
           <span className="text-sm text-cyan-400 font-medium flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5" />
-            {personalInfo.availability}
+            {t(personalInfo.availability, lang)}
           </span>
         </div>
 
@@ -149,15 +152,15 @@ export default function Hero() {
 
         {/* Title */}
         <p className="text-lg sm:text-xl text-gray-400 mb-3 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          {personalInfo.title}
+          {t(personalInfo.title, lang)}
         </p>
         <p className="text-base sm:text-lg text-gray-500 mb-8 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          {personalInfo.subtitle}
+          {t(personalInfo.subtitle, lang)}
         </p>
 
         {/* Description */}
         <p className="max-w-2xl mx-auto text-gray-400 text-sm sm:text-base leading-relaxed mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          {personalInfo.description}
+          {t(personalInfo.description, lang)}
         </p>
 
         {/* Quick Info */}
@@ -206,13 +209,13 @@ export default function Hero() {
             onClick={() => scrollTo("#projects")}
             className="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-xl hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
           >
-            Voir mes projets
+            {t(hero.viewProjects, lang)}
           </button>
           <button
             onClick={() => scrollTo("#contact")}
             className="px-6 py-3 glass text-white font-medium rounded-xl hover:bg-white/10 transition-colors border-glow"
           >
-            Me contacter
+            {t(hero.contactMe, lang)}
           </button>
         </div>
 

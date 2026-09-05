@@ -10,8 +10,11 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import { useLanguage, t } from "@/lib/i18n";
+import { contact as contactText } from "@/data/uiText";
 
 export default function Contact() {
+  const { lang } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -54,14 +57,14 @@ export default function Contact() {
           }`}
         >
           <span className="inline-block px-3 py-1 text-xs font-medium text-cyan-400 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-4">
-            Contact
+            {t(contactText.badge, lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Me Contacter
+            {t(contactText.title, lang)}
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-4" />
           <p className="text-gray-400 max-w-xl mx-auto">
-            N'hésitez pas à me contacter pour toute opportunité de stage ou collaboration.
+            {t(contactText.subtitle, lang)}
           </p>
         </div>
 
@@ -78,7 +81,7 @@ export default function Contact() {
                 <Mail className="w-5 h-5 text-cyan-400" />
               </div>
               <div>
-                <h4 className="text-sm font-medium text-gray-400">Email</h4>
+                <h4 className="text-sm font-medium text-gray-400">{t(contactText.email, lang)}</h4>
               </div>
             </div>
             <p className="text-sm text-white mb-3 break-all">
@@ -90,7 +93,7 @@ export default function Contact() {
                 className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs bg-cyan-500/10 text-cyan-400 rounded-lg hover:bg-cyan-500/20 transition-colors"
               >
                 <Send className="w-3 h-3" />
-                Envoyer
+                {t(contactText.send, lang)}
               </a>
               <button
                 onClick={copyEmail}
@@ -101,7 +104,7 @@ export default function Contact() {
                 ) : (
                   <Copy className="w-3 h-3" />
                 )}
-                {copied ? "Copié" : "Copier"}
+                {copied ? t(contactText.copied, lang) : t(contactText.copy, lang)}
               </button>
             </div>
           </div>
@@ -118,7 +121,7 @@ export default function Contact() {
                 <Phone className="w-5 h-5 text-cyan-400" />
               </div>
               <div>
-                <h4 className="text-sm font-medium text-gray-400">Téléphone</h4>
+                <h4 className="text-sm font-medium text-gray-400">{t(contactText.phone, lang)}</h4>
               </div>
             </div>
             <p className="text-sm text-white mb-3">{personalInfo.phone}</p>
@@ -127,7 +130,7 @@ export default function Contact() {
               className="flex items-center justify-center gap-1.5 px-3 py-2 text-xs bg-cyan-500/10 text-cyan-400 rounded-lg hover:bg-cyan-500/20 transition-colors"
             >
               <Phone className="w-3 h-3" />
-              Appeler
+              {t(contactText.call, lang)}
             </a>
           </div>
 
@@ -156,7 +159,7 @@ export default function Contact() {
               className="flex items-center justify-center gap-1.5 px-3 py-2 text-xs bg-cyan-500/10 text-cyan-400 rounded-lg hover:bg-cyan-500/20 transition-colors"
             >
               <ExternalLink className="w-3 h-3" />
-              Voir le profil
+              {t(contactText.viewProfile, lang)}
             </a>
           </div>
         </div>
@@ -172,7 +175,7 @@ export default function Contact() {
             <MapPin className="w-5 h-5 text-cyan-400" />
           </div>
           <div>
-            <h4 className="text-sm font-medium text-gray-400">Localisation</h4>
+            <h4 className="text-sm font-medium text-gray-400">{t(contactText.location, lang)}</h4>
             <p className="text-sm text-white">{personalInfo.address}</p>
           </div>
         </div>

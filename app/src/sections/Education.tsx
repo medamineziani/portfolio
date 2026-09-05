@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { GraduationCap, BookOpen, Award, Calendar, MapPin } from "lucide-react";
 import { education } from "@/data/portfolio";
+import { useLanguage, t } from "@/lib/i18n";
+import { education as educationText } from "@/data/uiText";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   GraduationCap,
@@ -9,6 +11,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 export default function Education() {
+  const { lang } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -44,10 +47,10 @@ export default function Education() {
           }`}
         >
           <span className="inline-block px-3 py-1 text-xs font-medium text-cyan-400 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-4">
-            Formation
+            {t(educationText.badge, lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Mon Parcours Académique
+            {t(educationText.title, lang)}
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto" />
         </div>
@@ -92,23 +95,23 @@ export default function Education() {
                       <div className="flex items-center gap-2 mb-2 justify-end">
                         <span className="text-sm font-medium text-cyan-400 flex items-center gap-1.5">
                           <Calendar className="w-3.5 h-3.5" />
-                          {edu.period}
+                          {t(edu.period, lang)}
                         </span>
                       </div>
 
                       <h3 className="text-lg font-semibold text-white mb-1">
-                        {edu.degree}
+                        {t(edu.degree, lang)}
                       </h3>
                       <div className="flex items-center gap-4 text-sm text-gray-400 mb-3 justify-end">
                         <span className="flex items-center gap-1">
                           <MapPin className="w-3.5 h-3.5" />
-                          {edu.location}
+                          {t(edu.location, lang)}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-500">{edu.school}</p>
-                      {edu.description && (
+                      <p className="text-sm text-gray-500">{t(edu.school, lang)}</p>
+                      {t(edu.description, lang) && (
                         <p className="text-sm text-gray-400 mt-2 leading-relaxed">
-                          {edu.description}
+                          {t(edu.description, lang)}
                         </p>
                       )}
                     </div>
@@ -131,22 +134,22 @@ export default function Education() {
                         <div className="flex items-center gap-2 mb-2 justify-end">
                           <span className="text-sm font-medium text-cyan-400 flex items-center gap-1.5">
                             <Calendar className="w-3.5 h-3.5" />
-                            {edu.period}
+                            {t(edu.period, lang)}
                           </span>
                         </div>
                         <h3 className="text-lg font-semibold text-white mb-1">
-                          {edu.degree}
+                          {t(edu.degree, lang)}
                         </h3>
                         <div className="flex items-center gap-4 text-sm text-gray-400 mb-3 justify-end">
                           <span className="flex items-center gap-1">
                             <MapPin className="w-3.5 h-3.5" />
-                            {edu.location}
+                            {t(edu.location, lang)}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-500">{edu.school}</p>
-                        {edu.description && (
+                        <p className="text-sm text-gray-500">{t(edu.school, lang)}</p>
+                        {t(edu.description, lang) && (
                           <p className="text-sm text-gray-400 mt-2 leading-relaxed">
-                            {edu.description}
+                            {t(edu.description, lang)}
                           </p>
                         )}
                       </div>
@@ -168,20 +171,20 @@ export default function Education() {
                     <div className="flex items-center gap-2 mb-2">
                       <Calendar className="w-3.5 h-3.5 text-cyan-400" />
                       <span className="text-sm font-medium text-cyan-400">
-                        {edu.period}
+                        {t(edu.period, lang)}
                       </span>
                     </div>
                     <h3 className="text-base font-semibold text-white mb-1">
-                      {edu.degree}
+                      {t(edu.degree, lang)}
                     </h3>
-                    <p className="text-sm text-gray-500 mb-1">{edu.school}</p>
+                    <p className="text-sm text-gray-500 mb-1">{t(edu.school, lang)}</p>
                     <div className="flex items-center gap-1 text-xs text-gray-500 mb-2">
                       <MapPin className="w-3 h-3" />
-                      {edu.location}
+                      {t(edu.location, lang)}
                     </div>
-                    {edu.description && (
+                    {t(edu.description, lang) && (
                       <p className="text-sm text-gray-400 leading-relaxed">
-                        {edu.description}
+                        {t(edu.description, lang)}
                       </p>
                     )}
                   </div>

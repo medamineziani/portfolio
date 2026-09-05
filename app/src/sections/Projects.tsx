@@ -2,22 +2,28 @@ import { useEffect, useRef, useState } from "react";
 import {
   Dumbbell,
   Network,
+  ScanEye,
+  ShoppingBag,
+  LineChart,
   Code2,
-  Mic,
-  ExternalLink,
+  Github,
   Calendar,
   Building2,
 } from "lucide-react";
 import { projects } from "@/data/portfolio";
+import { useLanguage, t } from "@/lib/i18n";
+import { projects as projectsText } from "@/data/uiText";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Dumbbell,
   Network,
-  Code2,
-  Mic,
+  ScanEye,
+  ShoppingBag,
+  LineChart,
 };
 
 export default function Projects() {
+  const { lang } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -56,15 +62,14 @@ export default function Projects() {
           }`}
         >
           <span className="inline-block px-3 py-1 text-xs font-medium text-cyan-400 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-4">
-            Projets
+            {t(projectsText.badge, lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Mes Réalisations
+            {t(projectsText.title, lang)}
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-4" />
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Une sélection de projets académiques et personnels démontrant mes compétences
-            en développement logiciel, intelligence artificielle et réseaux.
+            {t(projectsText.subtitle, lang)}
           </p>
         </div>
 
@@ -76,7 +81,7 @@ export default function Projects() {
             return (
               <div
                 key={i}
-                className={`group glass rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-500 cursor-pointer animate-pulse-glow hover:shadow-lg hover:shadow-cyan-500/10 ${
+                className={`group glass rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-500 flex flex-col animate-pulse-glow hover:shadow-lg hover:shadow-cyan-500/10 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: `${0.15 * i}s` }}
@@ -89,12 +94,12 @@ export default function Projects() {
                     </div>
                     <div>
                       <h3 className="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors">
-                        {project.title}
+                        {t(project.title, lang)}
                       </h3>
                       <div className="flex items-center gap-3 text-xs text-gray-500">
                         <span className="flex items-center gap-1">
                           <Building2 className="w-3 h-3" />
-                          {project.organization}
+                          {t(project.organization, lang)}
                         </span>
                         <span className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" />
@@ -103,16 +108,26 @@ export default function Projects() {
                       </div>
                     </div>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-cyan-400 transition-colors" />
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={t(projectsText.viewCode, lang)}
+                      className="p-2 -m-2 rounded-lg text-gray-600 hover:text-cyan-400 hover:bg-white/5 transition-colors"
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
 
                 {/* Description */}
                 <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                  {project.description}
+                  {t(project.description, lang)}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, j) => (
                     <span
                       key={j}
@@ -121,6 +136,31 @@ export default function Projects() {
                       {tag}
                     </span>
                   ))}
+                </div>
+
+                {/* Links */}
+                <div className="mt-auto pt-2 flex items-center gap-3">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-xs font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
+                    >
+                      <Github className="w-3.5 h-3.5" />
+                      {t(projectsText.viewCode, lang)}
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-medium text-gray-500 hover:text-cyan-400 transition-colors"
+                    >
+                      {t(projectsText.liveDemo, lang)}
+                    </a>
+                  )}
                 </div>
               </div>
             );

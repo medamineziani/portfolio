@@ -1,7 +1,10 @@
 import { Code2, Heart } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import { useLanguage, t } from "@/lib/i18n";
+import { footer as footerText } from "@/data/uiText";
 
 export default function Footer() {
+  const { lang } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -22,13 +25,21 @@ export default function Footer() {
           <div className="flex items-center gap-1 text-xs text-gray-500">
             <span>&copy; {currentYear}</span>
             <span>·</span>
-            <span>Fait avec</span>
+            <span>{t(footerText.madeIn, lang)}</span>
             <Heart className="w-3 h-3 text-red-400 fill-red-400" />
-            <span>à Toulouse</span>
+            <span>{t(footerText.inToulouse, lang)}</span>
           </div>
 
           {/* Links */}
           <div className="flex items-center gap-4">
+            <a
+              href={personalInfo.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-500 hover:text-cyan-400 transition-colors"
+            >
+              GitHub
+            </a>
             <a
               href={personalInfo.linkedinUrl}
               target="_blank"

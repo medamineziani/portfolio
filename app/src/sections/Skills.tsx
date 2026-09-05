@@ -7,7 +7,9 @@ import {
   GitBranch,
   CheckCircle2,
 } from "lucide-react";
-import { skills } from "@/data/portfolio";
+import { skills, languages } from "@/data/portfolio";
+import { useLanguage, t, type Bilingual } from "@/lib/i18n";
+import { skills as skillsText } from "@/data/uiText";
 
 interface SkillBarProps {
   name: string;
@@ -38,25 +40,8 @@ function SkillBar({ name, level, delay, isVisible }: SkillBarProps) {
   );
 }
 
-const skillCategories = [
-  {
-    title: "Langages de Programmation",
-    icon: Code2,
-    skills: skills.languages,
-  },
-  {
-    title: "Web & Data Science",
-    icon: Globe,
-    skills: skills.webData,
-  },
-  {
-    title: "IA & Vision par Ordinateur",
-    icon: Brain,
-    skills: skills.aiVision,
-  },
-];
-
 export default function Skills() {
+  const { lang } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -78,6 +63,24 @@ export default function Skills() {
     return () => observer.disconnect();
   }, []);
 
+  const skillCategories: { title: Bilingual; icon: typeof Code2; skills: { name: string; level: number }[] }[] = [
+    {
+      title: skillsText.categoryLanguages,
+      icon: Code2,
+      skills: skills.languages,
+    },
+    {
+      title: skillsText.categoryWebData,
+      icon: Globe,
+      skills: skills.webData,
+    },
+    {
+      title: skillsText.categoryAiVision,
+      icon: Brain,
+      skills: skills.aiVision,
+    },
+  ];
+
   return (
     <section
       id="skills"
@@ -92,15 +95,14 @@ export default function Skills() {
           }`}
         >
           <span className="inline-block px-3 py-1 text-xs font-medium text-cyan-400 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-4">
-            Compétences
+            {t(skillsText.badge, lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Mes Expertises
+            {t(skillsText.title, lang)}
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-4" />
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Un ensemble de compétences techniques développées à travers mes formations
-            et projets pratiques.
+            {t(skillsText.subtitle, lang)}
           </p>
         </div>
 
@@ -119,7 +121,7 @@ export default function Skills() {
                   <category.icon className="w-5 h-5 text-cyan-400" />
                 </div>
                 <h3 className="text-base font-semibold text-white">
-                  {category.title}
+                  {t(category.title, lang)}
                 </h3>
               </div>
 
@@ -150,7 +152,7 @@ export default function Skills() {
               <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
                 <Wrench className="w-5 h-5 text-cyan-400" />
               </div>
-              <h3 className="text-base font-semibold text-white">Outils</h3>
+              <h3 className="text-base font-semibold text-white">{t(skillsText.tools, lang)}</h3>
             </div>
             <div className="flex flex-wrap gap-2">
               {skills.tools.map((tool, i) => (
@@ -175,10 +177,10 @@ export default function Skills() {
               <div className="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center">
                 <GitBranch className="w-5 h-5 text-cyan-400" />
               </div>
-              <h3 className="text-base font-semibold text-white">Méthodologies</h3>
+              <h3 className="text-base font-semibold text-white">{t(skillsText.methods, lang)}</h3>
             </div>
             <div className="flex flex-wrap gap-2">
-              {skills.methods.map((method, i) => (
+              {skills.methods[lang].map((method, i) => (
                 <span
                   key={i}
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm bg-white/5 text-gray-300 rounded-lg border border-white/10"
@@ -197,25 +199,20 @@ export default function Skills() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <h3 className="text-base font-semibold text-white mb-5">Langues</h3>
+          <h3 className="text-base font-semibold text-white mb-5">{t(skillsText.languagesTitle, lang)}</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { name: "Français", level: "Langue maternelle", dots: 5 },
-              { name: "Anglais", level: "Courant", dots: 4 },
-              { name: "Arabe", level: "Courant", dots: 5 },
-              { name: "Tamazight", level: "Courant", dots: 5 },
-            ].map((lang, i) => (
+            {languages.map((lng, i) => (
               <div key={i} className="text-center">
                 <div className="text-sm font-medium text-white mb-1">
-                  {lang.name}
+                  {t(lng.name, lang)}
                 </div>
-                <div className="text-xs text-gray-500 mb-2">{lang.level}</div>
+                <div className="text-xs text-gray-500 mb-2">{t(lng.level, lang)}</div>
                 <div className="flex items-center justify-center gap-1">
                   {[...Array(5)].map((_, j) => (
                     <div
                       key={j}
                       className={`w-2 h-2 rounded-full ${
-                        j < lang.dots ? "bg-cyan-400" : "bg-white/10"
+                        j < lng.dots ? "bg-cyan-400" : "bg-white/10"
                       }`}
                     />
                   ))}

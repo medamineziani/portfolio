@@ -1,102 +1,183 @@
+import type { Bilingual } from "@/lib/i18n";
+
 export const personalInfo = {
   name: "Mohamed Amine Ziani",
   shortName: "Amine Ziani",
-  title: "Étudiant Ingénieur ENSEEIHT",
-  subtitle: "Sciences du Numérique",
-  description:
-    "Étudiant ingénieur de 20 ans en 1ère année à l'ENSEEIHT, issu des CPGE scientifiques au Maroc. Rigoureux et passionné par le développement logiciel, l'algorithmique et l'IA.",
+  title: {
+    fr: "Étudiant Ingénieur ENSEEIHT",
+    en: "Engineering Student at ENSEEIHT",
+  } as Bilingual,
+  subtitle: {
+    fr: "Sciences du Numérique",
+    en: "Digital Sciences",
+  } as Bilingual,
+  description: {
+    fr: "Étudiant ingénieur de 20 ans en 1ère année à l'ENSEEIHT, issu des CPGE scientifiques au Maroc. Rigoureux et passionné par le développement logiciel, l'algorithmique et l'IA.",
+    en: "20-year-old first-year engineering student at ENSEEIHT, coming from scientific preparatory classes (CPGE) in Morocco. Rigorous and passionate about software development, algorithms, and AI.",
+  } as Bilingual,
   email: "medamine.ziani85@gmail.com",
   phone: "+33 7 73 96 39 17",
   address: "12 rue des Blanchers, Toulouse",
   linkedin: "linkedin.com/in/m-a-ziani",
   linkedinUrl: "https://linkedin.com/in/m-a-ziani",
-  github: "https://github.com/m-a-ziani",
-  availability: "Recherche de stage",
+  github: "github.com/medamineziani",
+  githubUrl: "https://github.com/medamineziani",
+  availability: {
+    fr: "Recherche de stage",
+    en: "Looking for an internship",
+  } as Bilingual,
 };
 
 export const education = [
   {
-    school: "ENSEEIHT · INP",
-    location: "Toulouse, France",
-    degree: "1ère année Ingénieur - Sciences du Numérique",
-    period: "2025 - Présent",
-    description:
-      "Algorithmique, programmation, bases de données, réseaux, systèmes d'exploitation",
+    school: { fr: "ENSEEIHT · INP", en: "ENSEEIHT · INP" } as Bilingual,
+    location: { fr: "Toulouse, France", en: "Toulouse, France" } as Bilingual,
+    degree: {
+      fr: "1ère année Ingénieur - Sciences du Numérique",
+      en: "1st Year Engineering - Digital Sciences",
+    } as Bilingual,
+    period: { fr: "2025 - Présent", en: "2025 - Present" } as Bilingual,
+    description: {
+      fr: "Algorithmique, programmation, bases de données, réseaux, systèmes d'exploitation",
+      en: "Algorithms, programming, databases, networks, operating systems",
+    } as Bilingual,
     icon: "GraduationCap",
   },
   {
-    school: "CPGE Scientifique",
-    location: "Maroc",
-    degree: "Classes Préparatoires aux Grandes Écoles",
-    period: "2023 - 2025",
-    description:
-      "Mathématiques, Physique, Informatique - Préparation aux concours des grandes écoles",
+    school: {
+      fr: "CPGE Scientifique",
+      en: "Scientific Preparatory Classes (CPGE)",
+    } as Bilingual,
+    location: { fr: "Maroc", en: "Morocco" } as Bilingual,
+    degree: {
+      fr: "Classes Préparatoires aux Grandes Écoles",
+      en: "Preparatory Classes for Engineering Schools",
+    } as Bilingual,
+    period: { fr: "2023 - 2025", en: "2023 - 2025" } as Bilingual,
+    description: {
+      fr: "Mathématiques, Physique, Informatique - Préparation aux concours des grandes écoles",
+      en: "Mathematics, Physics, Computer Science - Preparation for engineering school entrance exams",
+    } as Bilingual,
     icon: "BookOpen",
   },
   {
-    school: "Baccalauréat Sciences Mathématiques B",
-    location: "Maroc",
-    degree: "Mention Bien",
-    period: "2023",
-    description: "",
+    school: {
+      fr: "Baccalauréat Sciences Mathématiques B",
+      en: "Baccalaureate, Mathematical Sciences B",
+    } as Bilingual,
+    location: { fr: "Maroc", en: "Morocco" } as Bilingual,
+    degree: { fr: "Mention Bien", en: "With Honors" } as Bilingual,
+    period: { fr: "2023", en: "2023" } as Bilingual,
+    description: { fr: "", en: "" } as Bilingual,
     icon: "Award",
   },
 ];
 
-export const projects = [
+export interface Project {
+  title: Bilingual;
+  organization: Bilingual;
+  year: string;
+  description: Bilingual;
+  tags: string[];
+  icon: string;
+  githubUrl: string | null;
+  liveUrl?: string;
+}
+
+export const projects: Project[] = [
   {
-    title: "Analyse Vidéo IA - Détection de Deadlift",
-    organization: "ENSEEIHT",
+    title: { fr: "Deadlift AI", en: "Deadlift AI" },
+    organization: { fr: "Projet personnel", en: "Personal project" },
     year: "2025",
-    description:
-      "Analyse vidéo en temps réel pour l'estimation de pose (keypoints) et la détection des phases du mouvement de deadlift, avec retour correctif automatisé.",
-    tags: ["Python", "OpenCV", "MediaPipe", "IA", "Vision"],
+    description: {
+      fr: "Analyse vidéo en temps réel du mouvement de deadlift : estimation de pose (YOLO11), calcul des angles articulaires, suivi de la trajectoire de la barre, et rapport de coaching PDF généré par l'API Claude.",
+      en: "Real-time deadlift video analysis: pose estimation (YOLO11), joint-angle computation, barbell trajectory tracking, and an AI-generated (Claude API) PDF coaching report.",
+    },
+    tags: ["Python", "OpenCV", "YOLO", "IA", "Computer Vision"],
     icon: "Dumbbell",
+    githubUrl: "https://github.com/medamineziani/deadlift-ai",
   },
   {
-    title: "Mise en place d'un FAI Simplifié",
-    organization: "ENSEEIHT",
+    title: {
+      fr: "PowerForm AI",
+      en: "PowerForm AI",
+    },
+    organization: { fr: "Projet personnel", en: "Personal project" },
     year: "2025",
-    description:
-      "Simulation complète d'une infrastructure réseau type Fournisseur d'Accès Internet : routage, DNS, DHCP, NAT. Configuration de routeurs et gestion des protocoles TCP/IP, BGP/OSPF.",
-    tags: ["Réseaux", "DNS", "DHCP", "NAT", "BGP", "OSPF"],
+    description: {
+      fr: "MVP SaaS complet d'analyse vidéo de powerlifting par IA : authentification et base de données Supabase, paiements Stripe, analyse par l'API Claude et génération de rapports PDF, déployé sur Vercel.",
+      en: "Full SaaS MVP for AI-powered powerlifting video analysis: Supabase auth & database, Stripe payments, Claude API analysis, and PDF report generation — deployed on Vercel.",
+    },
+    tags: ["Next.js", "TypeScript", "Supabase", "Stripe", "Claude API", "Tailwind"],
+    icon: "LineChart",
+    githubUrl: "https://github.com/medamineziani/powerform-ai",
+  },
+  {
+    title: {
+      fr: "Contrôle Qualité Vidéo des Palettes",
+      en: "Pallet Video Quality Control",
+    },
+    organization: { fr: "Projet personnel", en: "Personal project" },
+    year: "2025",
+    description: {
+      fr: "Proof of concept Python/OpenCV validant automatiquement, à partir d'une vidéo de palettisation, la conformité du colisage (nombre de couches, hauteur, emprise au sol) par rapport à un référentiel — verdict CONFORME / NON CONFORME avec écarts mesurés.",
+      en: "Python/OpenCV proof of concept that automatically validates pallet packaging conformity (carton layer count, height, footprint) from a palletizing video against a reference spec — CONFORMING / NON-CONFORMING verdict with measured deviations.",
+    },
+    tags: ["Python", "OpenCV", "Vision par ordinateur", "Industrie 4.0", "Tests unitaires"],
+    icon: "ScanEye",
+    githubUrl: "https://github.com/medamineziani/palette-vision-qc",
+  },
+  {
+    title: {
+      fr: "Simulateur IoT & Routage Réseau",
+      en: "IoT Simulator & Network Routing",
+    },
+    organization: { fr: "ENSEEIHT", en: "ENSEEIHT" },
+    year: "2025",
+    description: {
+      fr: "Projet académique combinant un simulateur IoT client/serveur (sockets TCP, Python) pour une station de pesée industrielle, et une infrastructure réseau Cisco complète (routage, DNS, DHCP, NAT).",
+      en: "Academic project combining a client/server IoT simulator (Python TCP sockets) for an industrial weighing station with a full Cisco network infrastructure (routing, DNS, DHCP, NAT).",
+    },
+    tags: ["Python", "TCP/IP", "Sockets", "Cisco IOS", "Réseaux"],
     icon: "Network",
+    githubUrl: "https://github.com/medamineziani/iot-weighing-network-sim",
   },
   {
-    title: "Développement Collaboratif d'un IDE Java",
-    organization: "ENSEEIHT",
+    title: { fr: "Fruizy", en: "Fruizy" },
+    organization: { fr: "Projet personnel", en: "Personal project" },
     year: "2025",
-    description:
-      "Éditeur de code avec coloration syntaxique, compilation et exécution intégrées. Projet de groupe avec gestion de versions Git, revue de code et coordination des tâches.",
-    tags: ["Java", "Git", "IDE", "POO", "Collaboration"],
-    icon: "Code2",
-  },
-  {
-    title: "TIPE - Reconnaissance Vocale par HMM",
-    organization: "CPGE",
-    year: "2025",
-    description:
-      "Implémentation d'un système de reconnaissance vocale basé sur les Modèles de Markov Cachés (HMM). Traitement audio, extraction de features MFCC, entraînement et évaluation du modèle.",
-    tags: ["HMM", "MFCC", "Python", "Signal", "IA"],
-    icon: "Mic",
+    description: {
+      fr: "Landing page marketing pour Fruizy, une marque de smoothies aux fruits congelés (Agadir, Maroc). Site vitrine mono-page en HTML/CSS pur, orienté conversion vers la commande WhatsApp.",
+      en: "Marketing landing page for Fruizy, a frozen-fruit smoothie brand (Agadir, Morocco). Single-page vanilla HTML/CSS site optimized for WhatsApp-order conversion.",
+    },
+    tags: ["HTML5", "CSS3", "SEO", "Design responsive"],
+    icon: "ShoppingBag",
+    githubUrl: "https://github.com/medamineziani/fruizy",
   },
 ];
 
 export const responsibilities = [
   {
-    role: "Responsable de Club Académique",
-    organization: "CPGE",
-    period: "2023 - 2025",
-    description:
-      "Animation d'ateliers maths/informatique pour 10-20 participants, création de supports pédagogiques, coordination d'événements.",
+    role: {
+      fr: "Responsable de Club Académique",
+      en: "Academic Club Lead",
+    } as Bilingual,
+    organization: { fr: "CPGE", en: "CPGE" } as Bilingual,
+    period: { fr: "2023 - 2025", en: "2023 - 2025" } as Bilingual,
+    description: {
+      fr: "Animation d'ateliers maths/informatique pour 10-20 participants, création de supports pédagogiques, coordination d'événements.",
+      en: "Ran math/CS workshops for 10-20 participants, created educational materials, and coordinated events.",
+    } as Bilingual,
     icon: "Users",
   },
   {
-    role: "Délégué de Classe",
-    organization: "CPGE",
-    period: "2023 - 2025",
-    description:
-      "Représentation étudiante auprès de l'administration, médiation et suivi des demandes collectives.",
+    role: { fr: "Délégué de Classe", en: "Class Representative" } as Bilingual,
+    organization: { fr: "CPGE", en: "CPGE" } as Bilingual,
+    period: { fr: "2023 - 2025", en: "2023 - 2025" } as Bilingual,
+    description: {
+      fr: "Représentation étudiante auprès de l'administration, médiation et suivi des demandes collectives.",
+      en: "Represented students to the administration, mediated issues, and followed up on collective requests.",
+    } as Bilingual,
     icon: "UserCheck",
   },
 ];
@@ -121,36 +202,36 @@ export const skills = {
     { name: "HMM", level: 75 },
     { name: "MFCC", level: 70 },
   ],
-  tools: [
-    "Git",
-    "Linux",
-    "VS Code",
-    "Docker",
-    "LaTeX",
-  ],
-  methods: [
-    "POO",
-    "Tests Unitaires",
-    "Modularité",
-    "Agile",
-    "Revue de Code",
-  ],
+  tools: ["Git", "Linux", "VS Code", "Docker", "LaTeX"],
+  methods: {
+    fr: ["POO", "Tests Unitaires", "Modularité", "Agile", "Revue de Code"],
+    en: ["OOP", "Unit Testing", "Modularity", "Agile", "Code Review"],
+  } as { fr: string[]; en: string[] },
 };
 
 export const languages = [
-  { name: "Français", level: "Langue maternelle", proficiency: 100 },
-  { name: "Anglais", level: "Courant", proficiency: 85 },
-  { name: "Arabe", level: "Courant", proficiency: 90 },
-  { name: "Tamazight", level: "Courant", proficiency: 90 },
+  { name: { fr: "Français", en: "French" } as Bilingual, level: { fr: "Langue maternelle", en: "Native" } as Bilingual, dots: 5 },
+  { name: { fr: "Anglais", en: "English" } as Bilingual, level: { fr: "Courant", en: "Fluent" } as Bilingual, dots: 4 },
+  { name: { fr: "Arabe", en: "Arabic" } as Bilingual, level: { fr: "Courant", en: "Fluent" } as Bilingual, dots: 5 },
+  { name: { fr: "Tamazight", en: "Tamazight" } as Bilingual, level: { fr: "Courant", en: "Fluent" } as Bilingual, dots: 5 },
 ];
 
 export const interests = [
-  { name: "LeetCode", icon: "Terminal" },
-  { name: "Codeforces", icon: "Trophy" },
-  { name: "Veille IA", icon: "Brain" },
-  { name: "Open Source", icon: "Github" },
-  { name: "Powerlifting", icon: "Dumbbell" },
-  { name: "Natation", icon: "Waves" },
-  { name: "Football", icon: "Goal" },
-  { name: "Sciences", icon: "Atom" },
+  { name: { fr: "LeetCode", en: "LeetCode" } as Bilingual, icon: "Terminal" },
+  { name: { fr: "Codeforces", en: "Codeforces" } as Bilingual, icon: "Trophy" },
+  { name: { fr: "Veille IA", en: "AI Trends" } as Bilingual, icon: "Brain" },
+  { name: { fr: "Open Source", en: "Open Source" } as Bilingual, icon: "Github" },
+  { name: { fr: "Powerlifting", en: "Powerlifting" } as Bilingual, icon: "Dumbbell" },
+  { name: { fr: "Natation", en: "Swimming" } as Bilingual, icon: "Waves" },
+  { name: { fr: "Football", en: "Football" } as Bilingual, icon: "Goal" },
+  { name: { fr: "Sciences", en: "Science" } as Bilingual, icon: "Atom" },
+];
+
+export const softSkills: Bilingual[] = [
+  { fr: "Rigueur", en: "Rigor" },
+  { fr: "Autonomie", en: "Autonomy" },
+  { fr: "Esprit d'équipe", en: "Teamwork" },
+  { fr: "Curiosité", en: "Curiosity" },
+  { fr: "Adaptabilité", en: "Adaptability" },
+  { fr: "Communication", en: "Communication" },
 ];
