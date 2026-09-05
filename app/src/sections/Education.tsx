@@ -74,7 +74,7 @@ export default function Education() {
               >
                 {/* Desktop Layout */}
                 <div className="hidden sm:grid sm:grid-cols-2 sm:gap-8 w-full">
-                  {/* Left Side */}
+                  {/* Content - placed in the left or right column depending on isLeft */}
                   <div
                     className={`${isLeft ? "text-right pr-8" : "col-start-2 pl-8"}`}
                   >
@@ -124,36 +124,6 @@ export default function Education() {
                     <div className="w-12 h-12 rounded-full glass border-glow flex items-center justify-center">
                       <Icon className="w-5 h-5 text-cyan-400" />
                     </div>
-                  </div>
-
-                  {/* Right Side (empty for left items) */}
-                  <div className={isLeft ? "" : "col-start-1 row-start-1 pr-8 text-right"}>
-                    {!isLeft && (
-                      <div className="glass rounded-xl p-6 relative animate-slide-in-left">
-                        <div className="absolute top-6 -right-1.5 w-3 h-3 bg-white/10 border-r border-b border-white/10 rotate-45" />
-                        <div className="flex items-center gap-2 mb-2 justify-end">
-                          <span className="text-sm font-medium text-cyan-400 flex items-center gap-1.5">
-                            <Calendar className="w-3.5 h-3.5" />
-                            {t(edu.period, lang)}
-                          </span>
-                        </div>
-                        <h3 className="text-lg font-semibold text-white mb-1">
-                          {t(edu.degree, lang)}
-                        </h3>
-                        <div className="flex items-center gap-4 text-sm text-gray-400 mb-3 justify-end">
-                          <span className="flex items-center gap-1">
-                            <MapPin className="w-3.5 h-3.5" />
-                            {t(edu.location, lang)}
-                          </span>
-                        </div>
-                        <p className="text-sm text-gray-500">{t(edu.school, lang)}</p>
-                        {t(edu.description, lang) && (
-                          <p className="text-sm text-gray-400 mt-2 leading-relaxed">
-                            {t(edu.description, lang)}
-                          </p>
-                        )}
-                      </div>
-                    )}
                   </div>
                 </div>
 

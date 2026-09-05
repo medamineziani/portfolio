@@ -8,8 +8,8 @@ const highlights: { icon: typeof User; title: Bilingual; description: Bilingual 
     icon: BookOpen,
     title: { fr: "Formation d'excellence", en: "Excellence-driven education" },
     description: {
-      fr: "CPGE scientifiques au Maroc, actuellement en 1ère année à l'ENSEEIHT",
-      en: "Scientific CPGE in Morocco, currently in 1st year at ENSEEIHT",
+      fr: "CPGE scientifiques au Maroc, actuellement en 2ème année à l'ENSEEIHT (filière ASR)",
+      en: "Scientific CPGE in Morocco, currently in 2nd year at ENSEEIHT (ASR major)",
     },
   },
   {
@@ -63,8 +63,8 @@ export default function About() {
 
   const bioParagraphs: Bilingual[] = [
     {
-      fr: "Je suis Mohamed Amine Ziani, étudiant ingénieur de 20 ans en première année à l'ENSEEIHT (Sciences du Numérique) à Toulouse, issu des classes préparatoires aux grandes écoles scientifiques au Maroc.",
-      en: "I'm Mohamed Amine Ziani, a 20-year-old first-year engineering student at ENSEEIHT (Digital Sciences) in Toulouse, coming from scientific preparatory classes for engineering schools in Morocco.",
+      fr: "Je suis Mohamed Amine Ziani, étudiant ingénieur en 2ème année à l'ENSEEIHT (filière Architecture des Ordinateurs et Réseaux) à Toulouse, issu des classes préparatoires aux grandes écoles scientifiques au Maroc.",
+      en: "I'm Mohamed Amine Ziani, a 2nd-year engineering student at ENSEEIHT (Computer Architecture & Networks major) in Toulouse, coming from scientific preparatory classes for engineering schools in Morocco.",
     },
     {
       fr: "Rigoureux et passionné par le développement logiciel, l'algorithmique et l'intelligence artificielle, je recherche un stage pour consolider mes compétences dans un environnement professionnel stimulant.",

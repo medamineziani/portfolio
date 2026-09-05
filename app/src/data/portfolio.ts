@@ -8,12 +8,12 @@ export const personalInfo = {
     en: "Engineering Student at ENSEEIHT",
   } as Bilingual,
   subtitle: {
-    fr: "Sciences du Numérique",
-    en: "Digital Sciences",
+    fr: "Architecture des Ordinateurs et Réseaux (ASR)",
+    en: "Computer Architecture & Networks (ASR)",
   } as Bilingual,
   description: {
-    fr: "Étudiant ingénieur de 20 ans en 1ère année à l'ENSEEIHT, issu des CPGE scientifiques au Maroc. Rigoureux et passionné par le développement logiciel, l'algorithmique et l'IA.",
-    en: "20-year-old first-year engineering student at ENSEEIHT, coming from scientific preparatory classes (CPGE) in Morocco. Rigorous and passionate about software development, algorithms, and AI.",
+    fr: "Étudiant ingénieur en 2ème année à l'ENSEEIHT, filière Architecture des Ordinateurs et Réseaux (ASR), issu des CPGE scientifiques au Maroc. Rigoureux et passionné par le développement logiciel, les systèmes/réseaux et l'IA.",
+    en: "2nd-year engineering student at ENSEEIHT, majoring in Computer Architecture & Networks (ASR), coming from scientific preparatory classes (CPGE) in Morocco. Rigorous and passionate about software development, systems/networks, and AI.",
   } as Bilingual,
   email: "medamine.ziani85@gmail.com",
   phone: "+33 7 73 96 39 17",
@@ -23,8 +23,8 @@ export const personalInfo = {
   github: "github.com/medamineziani",
   githubUrl: "https://github.com/medamineziani",
   availability: {
-    fr: "Recherche de stage",
-    en: "Looking for an internship",
+    fr: "Stage de 2 mois entre juin et septembre 2027",
+    en: "2-month internship between June and September 2027",
   } as Bilingual,
 };
 
@@ -33,10 +33,24 @@ export const education = [
     school: { fr: "ENSEEIHT · INP", en: "ENSEEIHT · INP" } as Bilingual,
     location: { fr: "Toulouse, France", en: "Toulouse, France" } as Bilingual,
     degree: {
+      fr: "2ème année Ingénieur - Architecture des Ordinateurs et Réseaux (ASR)",
+      en: "2nd Year Engineering - Computer Architecture & Networks (ASR)",
+    } as Bilingual,
+    period: { fr: "2026 - Présent", en: "2026 - Present" } as Bilingual,
+    description: {
+      fr: "Architecture des systèmes, réseaux, systèmes d'exploitation, sécurité informatique",
+      en: "Systems architecture, networks, operating systems, computer security",
+    } as Bilingual,
+    icon: "GraduationCap",
+  },
+  {
+    school: { fr: "ENSEEIHT · INP", en: "ENSEEIHT · INP" } as Bilingual,
+    location: { fr: "Toulouse, France", en: "Toulouse, France" } as Bilingual,
+    degree: {
       fr: "1ère année Ingénieur - Sciences du Numérique",
       en: "1st Year Engineering - Digital Sciences",
     } as Bilingual,
-    period: { fr: "2025 - Présent", en: "2025 - Present" } as Bilingual,
+    period: { fr: "2025 - 2026", en: "2025 - 2026" } as Bilingual,
     description: {
       fr: "Algorithmique, programmation, bases de données, réseaux, systèmes d'exploitation",
       en: "Algorithms, programming, databases, networks, operating systems",
