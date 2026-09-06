@@ -13,6 +13,7 @@ import {
   Building2,
 } from "lucide-react";
 import { projects } from "@/data/portfolio";
+import { projectMedia } from "@/data/media";
 import { useLanguage, t } from "@/lib/i18n";
 import { projects as projectsText } from "@/data/uiText";
 
@@ -81,6 +82,7 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, i) => {
             const Icon = iconMap[project.icon] || Code2;
+            const media = projectMedia[project.title.en];
 
             return (
               <div
@@ -90,6 +92,37 @@ export default function Projects() {
                 }`}
                 style={{ transitionDelay: `${0.15 * i}s` }}
               >
+                {/* AI-generated visual (optional, see src/data/media.ts) */}
+                {media && (media.video || media.image) && (
+                  <div className="relative -mx-6 -mt-6 mb-5 aspect-video overflow-hidden rounded-t-2xl border-b border-white/10 bg-black/40">
+                    {media.image && (
+                      <img
+                        src={media.image}
+                        alt={t(project.title, lang)}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    )}
+                    {media.video && (
+                      <video
+                        src={media.video}
+                        poster={media.image}
+                        muted
+                        loop
+                        playsInline
+                        preload="none"
+                        onMouseEnter={(e) => void e.currentTarget.play().catch(() => {})}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.pause();
+                          e.currentTarget.currentTime = 0;
+                        }}
+                        className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  </div>
+                )}
+
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
