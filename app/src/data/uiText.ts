@@ -51,6 +51,15 @@ export const projects = {
   } as Bilingual,
   viewCode: { fr: "Voir le code", en: "View code" } as Bilingual,
   liveDemo: { fr: "Démo en ligne", en: "Live demo" } as Bilingual,
+  filterAll: { fr: "Tous", en: "All" } as Bilingual,
+  categories: {
+    ai: { fr: "IA & Vision", en: "AI & Vision" } as Bilingual,
+    agents: { fr: "Agents IA", en: "AI Agents" } as Bilingual,
+    apps: { fr: "Applications & SaaS", en: "Apps & SaaS" } as Bilingual,
+    data: { fr: "Data & Analytics", en: "Data & Analytics" } as Bilingual,
+    network: { fr: "Réseaux & IoT", en: "Networks & IoT" } as Bilingual,
+    cyber: { fr: "Cybersécurité", en: "Cybersecurity" } as Bilingual,
+  } as Record<string, Bilingual>,
 };
 
 export const skills = {

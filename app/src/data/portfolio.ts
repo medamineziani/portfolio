@@ -87,6 +87,8 @@ export const education = [
   },
 ];
 
+export type ProjectCategory = "ai" | "agents" | "apps" | "data" | "network" | "cyber";
+
 export interface Project {
   title: Bilingual;
   organization: Bilingual;
@@ -94,6 +96,7 @@ export interface Project {
   description: Bilingual;
   tags: string[];
   icon: string;
+  categories: ProjectCategory[];
   githubUrl: string | null;
   liveUrl?: string;
 }
@@ -109,6 +112,7 @@ export const projects: Project[] = [
     },
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "Multi-tenant", "Tailwind"],
     icon: "Stethoscope",
+    categories: ["apps", "data"],
     githubUrl: null,
   },
   {
@@ -121,6 +125,7 @@ export const projects: Project[] = [
     },
     tags: ["Electron", "React", "TypeScript", "Prisma", "SQLite", "Zod", "Vitest"],
     icon: "Monitor",
+    categories: ["apps"],
     githubUrl: "https://github.com/medamineziani/cabinet-dentaire-desktop",
   },
   {
@@ -133,6 +138,7 @@ export const projects: Project[] = [
     },
     tags: ["Next.js", "TypeScript", "Prisma", "NextAuth", "Recharts", "Tailwind"],
     icon: "Store",
+    categories: ["apps"],
     githubUrl: "https://github.com/medamineziani/caisse",
   },
   {
@@ -145,6 +151,7 @@ export const projects: Project[] = [
     },
     tags: ["Python", "OpenCV", "YOLO", "IA", "Computer Vision"],
     icon: "Dumbbell",
+    categories: ["ai"],
     githubUrl: "https://github.com/medamineziani/deadlift-ai",
   },
   {
@@ -160,6 +167,7 @@ export const projects: Project[] = [
     },
     tags: ["Next.js", "TypeScript", "Supabase", "Stripe", "Claude API", "Tailwind"],
     icon: "LineChart",
+    categories: ["ai", "apps"],
     githubUrl: "https://github.com/medamineziani/powerform-ai",
   },
   {
@@ -175,6 +183,7 @@ export const projects: Project[] = [
     },
     tags: ["Python", "OpenCV", "Vision par ordinateur", "Industrie 4.0", "Tests unitaires"],
     icon: "ScanEye",
+    categories: ["ai"],
     githubUrl: "https://github.com/medamineziani/palette-vision-qc",
   },
   {
@@ -190,6 +199,7 @@ export const projects: Project[] = [
     },
     tags: ["Python", "C", "TCP/IP", "Sockets", "Cisco Packet Tracer", "VLAN", "OSPF", "QoS"],
     icon: "Network",
+    categories: ["network"],
     githubUrl: "https://github.com/medamineziani/iot-weighing-network-sim",
   },
   {
@@ -202,6 +212,7 @@ export const projects: Project[] = [
     },
     tags: ["HTML5", "CSS3", "SEO", "Design responsive"],
     icon: "ShoppingBag",
+    categories: ["apps"],
     githubUrl: "https://github.com/medamineziani/fruizy",
   },
   {
@@ -217,6 +228,7 @@ export const projects: Project[] = [
     },
     tags: ["Claude Agent SDK", "Automatisation", "Claude in Chrome", "Tâches planifiées"],
     icon: "Home",
+    categories: ["agents"],
     githubUrl: null,
   },
   {
@@ -232,6 +244,7 @@ export const projects: Project[] = [
     },
     tags: ["Kali Linux", "VirtualBox", "Pentest", "Auto-formation"],
     icon: "Shield",
+    categories: ["cyber"],
     githubUrl: null,
   },
 ];

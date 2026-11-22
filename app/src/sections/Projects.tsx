@@ -15,7 +15,7 @@ import {
   Calendar,
   Building2,
 } from "lucide-react";
-import { projects } from "@/data/portfolio";
+import { projects, type ProjectCategory } from "@/data/portfolio";
 import { projectMedia } from "@/data/media";
 import { useLanguage, t } from "@/lib/i18n";
 import { projects as projectsText } from "@/data/uiText";
@@ -37,6 +37,13 @@ export default function Projects() {
   const { lang } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [active, setActive] = useState<ProjectCategory | "all">("all");
+
+  const categories = (Object.keys(projectsText.categories) as ProjectCategory[]).filter(
+    (c) => projects.some((p) => p.categories.includes(c))
+  );
+  const visibleProjects =
+    active === "all" ? projects : projects.filter((p) => p.categories.includes(active));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -84,15 +91,43 @@ export default function Projects() {
           </p>
         </div>
 
+        {/* Category filter */}
+        <div
+          role="tablist"
+          aria-label={t(projectsText.badge, lang)}
+          className="flex flex-wrap justify-center gap-2 mb-10"
+        >
+          {(["all", ...categories] as const).map((c) => {
+            const selected = active === c;
+            const count = c === "all" ? projects.length : projects.filter((p) => p.categories.includes(c)).length;
+            return (
+              <button
+                key={c}
+                role="tab"
+                aria-selected={selected}
+                onClick={() => setActive(c)}
+                className={`px-4 py-2 text-sm font-medium rounded-full border transition-colors ${
+                  selected
+                    ? "bg-cyan-500 text-black border-cyan-500"
+                    : "bg-white/5 text-gray-400 border-white/10 hover:border-cyan-500/30 hover:text-cyan-400"
+                }`}
+              >
+                {c === "all" ? t(projectsText.filterAll, lang) : t(projectsText.categories[c], lang)}
+                <span className={`ml-2 text-xs ${selected ? "text-black/70" : "text-gray-500"}`}>{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, i) => {
+          {visibleProjects.map((project, i) => {
             const Icon = iconMap[project.icon] || Code2;
             const media = projectMedia[project.title.en];
 
             return (
               <div
-                key={i}
+                key={project.title.en}
                 className={`group glass rounded-2xl p-6 hover:bg-white/[0.08] transition-all duration-500 flex flex-col animate-pulse-glow hover:shadow-lg hover:shadow-cyan-500/10 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
