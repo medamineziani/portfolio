@@ -8,8 +8,11 @@
  * 3. Flip a value from `null` to its path string. The site picks it up
  *    automatically; anything left as `null` keeps the current design.
  *
- * Paths are served from /public, so they start with "/media/...".
+ * Files live in /public and are served under the Vite base path, so
+ * paths are built as `${B}media/<file>` (B = import.meta.env.BASE_URL).
  */
+
+const B = import.meta.env.BASE_URL;
 
 export interface MediaClip {
   /** looping background / showcase video, no audio, H.264 .mp4 */
@@ -20,8 +23,8 @@ export interface MediaClip {
 
 /** Full-bleed ambient loop behind the hero name. 1920x1080, 6-10s seamless loop. */
 export const heroBackground: MediaClip = {
-  video: null, // add "/media/hero.mp4" once a video loop is generated
-  poster: "/media/hero-poster.jpg", // Higgsfield still (nano_banana_pro)
+  video: null, // add `${B}media/hero.mp4` once a video loop is generated
+  poster: `${B}media/hero-poster.jpg`, // Higgsfield still (nano_banana_pro)
 };
 
 /**
@@ -29,7 +32,7 @@ export const heroBackground: MediaClip = {
  * `video` autoplays muted on hover; `image` is a static still.
  */
 export const projectMedia: Record<string, { image?: string; video?: string }> = {
-  "Deadlift AI": { image: "/media/deadlift-ai.jpg" },
-  "PowerForm AI": { image: "/media/powerform-ai.jpg" },
-  "Pallet Video Quality Control": { image: "/media/pallet-vision-qc.jpg" },
+  "Deadlift AI": { image: `${B}media/deadlift-ai.jpg` },
+  "PowerForm AI": { image: `${B}media/powerform-ai.jpg` },
+  "Pallet Video Quality Control": { image: `${B}media/pallet-vision-qc.jpg` },
 };
