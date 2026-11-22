@@ -10,6 +10,7 @@ import {
   Stethoscope,
   Monitor,
   Store,
+  Cpu,
   Code2,
   Github,
   Calendar,
@@ -31,6 +32,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Stethoscope,
   Monitor,
   Store,
+  Cpu,
 };
 
 export default function Projects() {

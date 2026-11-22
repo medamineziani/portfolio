@@ -57,6 +57,7 @@ export const projects = {
     agents: { fr: "Agents IA", en: "AI Agents" } as Bilingual,
     apps: { fr: "Applications & SaaS", en: "Apps & SaaS" } as Bilingual,
     data: { fr: "Data & Analytics", en: "Data & Analytics" } as Bilingual,
+    hardware: { fr: "Architecture & FPGA", en: "Architecture & FPGA" } as Bilingual,
     network: { fr: "Réseaux & IoT", en: "Networks & IoT" } as Bilingual,
     cyber: { fr: "Cybersécurité", en: "Cybersecurity" } as Bilingual,
   } as Record<string, Bilingual>,

@@ -87,7 +87,7 @@ export const education = [
   },
 ];
 
-export type ProjectCategory = "ai" | "agents" | "apps" | "data" | "network" | "cyber";
+export type ProjectCategory = "ai" | "agents" | "apps" | "data" | "network" | "hardware" | "cyber";
 
 export interface Project {
   title: Bilingual;
@@ -102,6 +102,19 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: { fr: "Contrôleur SPI pour joystick sur FPGA", en: "SPI Joystick Controller on FPGA" },
+    organization: { fr: "ENSEEIHT · Projet d'architecture (ASR)", en: "ENSEEIHT · Computer Architecture project (ASR)" },
+    year: "2026",
+    description: {
+      fr: "Maître SPI en VHDL pour lire un joystick Digilent Pmod JSTK depuis une carte Nexys 4 DDR : composant d'échange d'un octet (automate à états), maître de trames de 3 octets avec banc de test, puis maître de trames de 5 octets décodant les axes X/Y sur 10 bits et 3 boutons, avec commande des LED et temporisations de protocole.",
+      en: "VHDL SPI master reading a Digilent Pmod JSTK joystick from a Nexys 4 DDR board: single-byte exchange component (state machine), 3-byte frame master with testbench, then a 5-byte frame master decoding 10-bit X/Y axes and 3 buttons, with LED control and protocol timing.",
+    },
+    tags: ["VHDL", "FPGA", "SPI", "Nexys 4 DDR", "Automates à états", "GHDL"],
+    icon: "Cpu",
+    categories: ["hardware"],
+    githubUrl: "https://github.com/medamineziani/fpga-joystick-spi",
+  },
   {
     title: { fr: "Medora : SaaS de gestion de cabinet médical", en: "Medora: Medical Practice SaaS" },
     organization: { fr: "Projet personnel", en: "Personal project" },
