@@ -87,7 +87,7 @@ export const education = [
   },
 ];
 
-export type ProjectCategory = "ai" | "agents" | "apps" | "data" | "network" | "hardware" | "cyber";
+export type ProjectCategory = "ai" | "agents" | "apps" | "data" | "network" | "hardware" | "systems" | "cyber";
 
 export interface Project {
   title: Bilingual;
@@ -103,8 +103,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: { fr: "Minishell : interpréteur de commandes", en: "Minishell: Command Interpreter" },
+    organization: { fr: "Projet personnel", en: "Personal project" },
+    year: "2026",
+    description: {
+      fr: "Shell Unix simplifié en C sur les primitives POSIX : exécution de commandes avec fork/execvp/waitpid, commandes internes (cd, pwd, help, exit), pipelines multi-commandes, redirections <, > et >>, exécution en arrière-plan avec & et récupération des processus via SIGCHLD, gestion de SIGINT/SIGQUIT, guillemets et échappements. Compilé en -Wall -Wextra -Werror.",
+      en: "Simplified Unix shell in C on POSIX primitives: command execution with fork/execvp/waitpid, built-ins (cd, pwd, help, exit), multi-command pipelines, <, > and >> redirections, background jobs with & and SIGCHLD reaping, SIGINT/SIGQUIT handling, quoting and escapes. Built with -Wall -Wextra -Werror.",
+    },
+    tags: ["C", "POSIX", "fork/exec", "Pipes", "Signaux", "Linux"],
+    icon: "Terminal",
+    categories: ["systems"],
+    githubUrl: "https://github.com/medamineziani/minishell",
+  },
+  {
     title: { fr: "Contrôleur SPI pour joystick sur FPGA", en: "SPI Joystick Controller on FPGA" },
-    organization: { fr: "ENSEEIHT · Projet d'architecture (ASR)", en: "ENSEEIHT · Computer Architecture project (ASR)" },
+    organization: { fr: "Projet personnel", en: "Personal project" },
     year: "2026",
     description: {
       fr: "Maître SPI en VHDL pour lire un joystick Digilent Pmod JSTK depuis une carte Nexys 4 DDR : composant d'échange d'un octet (automate à états), maître de trames de 3 octets avec banc de test, puis maître de trames de 5 octets décodant les axes X/Y sur 10 bits et 3 boutons, avec commande des LED et temporisations de protocole.",

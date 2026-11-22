@@ -11,6 +11,7 @@ import {
   Monitor,
   Store,
   Cpu,
+  Terminal,
   Code2,
   Github,
   Calendar,
@@ -33,6 +34,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Monitor,
   Store,
   Cpu,
+  Terminal,
 };
 
 export default function Projects() {
