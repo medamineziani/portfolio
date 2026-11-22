@@ -7,7 +7,7 @@ export const nav = {
   internships: { fr: "Stages", en: "Internships" } as Bilingual,
   projects: { fr: "Projets", en: "Projects" } as Bilingual,
   skills: { fr: "Compétences", en: "Skills" } as Bilingual,
-  career: { fr: "Carrière", en: "Career" } as Bilingual,
+  career: { fr: "PPP", en: "PPP" } as Bilingual,
   contact: { fr: "Contact", en: "Contact" } as Bilingual,
   contactCta: { fr: "Me contacter", en: "Get in touch" } as Bilingual,
 };
@@ -113,17 +113,70 @@ export const footer = {
   inToulouse: { fr: "à Toulouse", en: "in Toulouse" } as Bilingual,
 };
 
-export const career = {
-  badge: { fr: "Carrière", en: "Career" } as Bilingual,
-  title: { fr: "Projet professionnel", en: "Career Project" } as Bilingual,
+export const ppp = {
+  badge: { fr: "PPP", en: "PPP" } as Bilingual,
+  title: { fr: "Projet Personnel et Professionnel", en: "Personal & Professional Project" } as Bilingual,
   subtitle: {
-    fr: "Mes CV en français et en anglais, mon profil LinkedIn et mon projet professionnel.",
-    en: "My CVs in French and English, my LinkedIn profile and my career project.",
+    fr: "Mon e-portfolio suit le cadre de l'ENSEEIHT : six onglets pour présenter mon parcours, mes engagements et mon projet de carrière.",
+    en: "My e-portfolio follows the ENSEEIHT framework: six tabs presenting my course, my commitments and my career project.",
   } as Bilingual,
+  tabs: {
+    welcome: { fr: "Bienvenue", en: "Welcome" } as Bilingual,
+    course: { fr: "Cursus ingénieur", en: "Engineering course" } as Bilingual,
+    mobility: { fr: "Mobilité internationale", en: "International mobility" } as Bilingual,
+    civic: { fr: "Développement durable & engagement", en: "Sustainability & civic engagement" } as Bilingual,
+    sport: { fr: "Sport & autres activités", en: "Sport & other activities" } as Bilingual,
+    career: { fr: "Développement de carrière", en: "Career development" } as Bilingual,
+  },
+  welcomeTitle: { fr: "Bienvenue sur mon e-portfolio", en: "Welcome to my e-portfolio" } as Bilingual,
+  seeProjects: { fr: "Voir mes projets", en: "See my projects" } as Bilingual,
+  seeEducation: { fr: "Formation", en: "Education" } as Bilingual,
+  seeInternships: { fr: "Stages", en: "Internships" } as Bilingual,
+  courseTitle: { fr: "Mon parcours d'ingénieur", en: "My engineering path" } as Bilingual,
+  courseText: {
+    fr: "2ᵉ année à l'ENSEEIHT en Architecture des Ordinateurs et Réseaux, après une 1ʳᵉ année en Sciences du Numérique. Mes projets sont classés par domaine :",
+    en: "2nd year at ENSEEIHT in Computer Architecture & Networks, after a 1st year in Digital Sciences. My projects are grouped by field:",
+  } as Bilingual,
+  projectsLabel: { fr: "projets", en: "projects" } as Bilingual,
+  mobilityTitle: { fr: "Mon projet de mobilité internationale", en: "My international mobility project" } as Bilingual,
+  mobilityText: {
+    fr: "La mobilité dure 17 semaines en semestre 9, avec un niveau d'anglais B2+ à valider. Trois pistes, chacune alignée sur un modèle professionnel :",
+    en: "The mobility lasts 17 weeks in semester 9, with an English level of B2+ to validate. Three ideas, each aligned with a role model:",
+  } as Bilingual,
+  mobilityNote: {
+    fr: "Projets envisagés, à confirmer avec mon tuteur PPP et le service des relations internationales.",
+    en: "Ideas under consideration, to be confirmed with my PPP tutor and the international office.",
+  } as Bilingual,
+  languagesLabel: { fr: "Langues", en: "Languages" } as Bilingual,
+  alignedWith: { fr: "Modèle", en: "Role model" } as Bilingual,
+  civicTitle: { fr: "Engagement citoyen", en: "Civic engagement" } as Bilingual,
+  civicDone: { fr: "Déjà réalisé", en: "Already done" } as Bilingual,
+  civicGoal: { fr: "Objectif semestre 9", en: "Semester 9 goal" } as Bilingual,
+  civicGoalText: {
+    fr: "40 heures d'engagement citoyen. Piste : animer des ateliers d'initiation à l'informatique et à la cybersécurité, dans la continuité de mes ateliers de CPGE.",
+    en: "40 hours of civic engagement. Idea: run introductory computing and cybersecurity workshops, continuing the workshops I ran in preparatory classes.",
+  } as Bilingual,
+  sustainTitle: { fr: "Numérique sobre", en: "Lean digital" } as Bilingual,
+  sustainText: {
+    fr: "Ce portfolio est un site statique (hébergement GitHub Pages, sans base de données) avec des images compressées : l'image d'accueil pèse environ 110 Ko.",
+    en: "This portfolio is a static site (GitHub Pages hosting, no database) with compressed images: the hero image weighs about 110 KB.",
+  } as Bilingual,
+  sportTitle: { fr: "Sport et autres activités", en: "Sport and other activities" } as Bilingual,
+  sportText: {
+    fr: "Le powerlifting nourrit mes projets Deadlift AI et PowerForm AI : je relie ma pratique sportive à mon métier d'ingénieur.",
+    en: "Powerlifting feeds my Deadlift AI and PowerForm AI projects: I connect my sport to my engineering work.",
+  } as Bilingual,
+  careerTitle: { fr: "Mon projet de carrière", en: "My career project" } as Bilingual,
   download: { fr: "Télécharger (PDF)", en: "Download (PDF)" } as Bilingual,
   linkedin: { fr: "Profil LinkedIn", en: "LinkedIn profile" } as Bilingual,
   linkedinOpen: { fr: "Ouvrir LinkedIn", en: "Open LinkedIn" } as Bilingual,
   pitch: { fr: "Elevator pitch (en anglais)", en: "Elevator pitch" } as Bilingual,
-  roleModels: { fr: "Modèles professionnels", en: "Role models" } as Bilingual,
-  mobility: { fr: "Projets de mobilité internationale", en: "International mobility projects" } as Bilingual,
+  pitchScript: { fr: "Script du pitch", en: "Pitch script" } as Bilingual,
+  roleModels: { fr: "Trois modèles professionnels", en: "Three role models" } as Bilingual,
+  roleModelsNote: {
+    fr: "Profils analysés à partir de sources publiques. L'analyse (\"ce que j'en retiens\") est la mienne.",
+    en: "Profiles analysed from public sources. The analysis (\"what I take from it\") is my own.",
+  } as Bilingual,
+  takeaway: { fr: "Ce que j'en retiens", en: "What I take from it" } as Bilingual,
+  source: { fr: "Source", en: "Source" } as Bilingual,
 };

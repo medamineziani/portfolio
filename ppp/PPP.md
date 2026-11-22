@@ -6,9 +6,9 @@ Deliverables asked for the e-portfolio "Career Project" section, and what is don
 |---|---|
 | CV in English and in French | Done: `cv/CV_Mohamed_Amine_Ziani_{EN,FR}.pdf` (also downloadable on the e-portfolio) |
 | LinkedIn in English and French (optional) | Texts drafted below, to paste into LinkedIn |
-| Elevator pitch video, 2-3 min, in English (present, very brief past, future) | Script drafted below, to record |
-| 3 role-model profiles analysed | **To do by you**: needs 3 real people (MyJobGlasses or alumni interviews). Grid and questions below |
-| 3 international mobility projects aligned with the 3 role models | Proposals below, to validate once the role models are chosen |
+| Elevator pitch video, 2-3 min, in English (present, very brief past, future) | Script final below (same text on the site), **video to record**, then set `pitchVideoUrl` in `app/src/data/career.ts` |
+| 3 role-model profiles analysed | Done on the site with 3 public figures (public sources, not interviews). Replace or complement with real interviews if the course requires it |
+| 3 international mobility projects aligned with the 3 role models | Done on the site as ideas, to confirm with the PPP tutor |
 
 Before sending: the course requires the school address `prenom.nom@etu.toulouse-inp.fr` on the CV.
 Set `EMAIL` at the top of `cv/build_cv.py`, then run `python cv/build_cv.py --html`.
@@ -49,7 +49,7 @@ Course reminders: city filled in (Toulouse, not only France), a real photo (neve
 
 ## 2. Elevator pitch script (English, about 2.5 minutes)
 
-Replace the bracketed parts with your real role models and mobility choices before recording.
+Final text. Change the role models or mobility ideas here and in `app/src/data/career.ts` together.
 
 > Hello, I'm Mohamed Amine Ziani, a second-year engineering student at ENSEEIHT in Toulouse, majoring in Computer Architecture and Networks.
 >
@@ -57,7 +57,7 @@ Replace the bracketed parts with your real role models and mobility choices befo
 >
 > **Past, briefly.** I did two years of scientific preparatory classes in Morocco, where I led the student union and ran maths and computer science workshops. This summer I completed two internships in Agadir: IT network administration, then Industry 4.0 projects, where I built an IoT simulator in Python and C, designed a VLAN, OSPF and QoS network in Cisco Packet Tracer, and prototyped a computer-vision pallet check with OpenCV.
 >
-> **Future.** I want to work as a [target role]. To understand the path, I analysed three role models. [Role model 1], [job title] at [company], showed me [one concrete insight]. [Role model 2], [job title] at [company], [insight]. [Role model 3], [job title] at [company], [insight]. For my 17-week mobility in semester 9, I am considering three projects, one per profile: [mobility 1], [mobility 2] and [mobility 3]. Before that, I am looking for a two-month internship between June and September 2027.
+> **Future.** I want to work on the infrastructure and hardware that everything else runs on. To understand the paths, I studied three role models: Radia Perlman, who designed the Spanning Tree Protocol and showed me how one simple network algorithm can scale the Internet; Bruce Schneier, who taught me that security is about systems and people, not only code; and David Patterson, who changed processor design with RISC and RISC-V. For my 17-week mobility in semester 9, I am considering three projects, one per profile: a network engineering team in the Netherlands or Germany, a cybersecurity team in Québec, and a hardware design lab in Switzerland. Before that, I am looking for a two-month internship between June and September 2027.
 >
 > **Unique value.** I connect the layers, from silicon and protocols to the application, and I deliver. Thank you.
 
@@ -65,40 +65,30 @@ Recording checklist: 2-3 minutes, English, camera at eye level, one take without
 
 ---
 
-## 3. Role-model profiles (to complete with real people)
+## 3. Role models (chosen, from public sources)
 
-Pick 3 real professionals (MyJobGlasses, ENSEEIHT alumni, LinkedIn contacts you have spoken to). Suggested profile types matching your ASR path:
-
-| # | Profile to look for | Where to search |
+| Role model | Profile | Source |
 |---|---|---|
-| 1 | Network / systems / infrastructure engineer | ENSEEIHT ASR or SN alumni; telecom operators, integrators, cloud providers |
-| 2 | Cybersecurity engineer (pentest, SOC, security architecture) | MyJobGlasses "ingénieur cybersécurité"; alumni in security consultancies |
-| 3 | Embedded / FPGA / computer-architecture engineer | ENSEEIHT alumni in aerospace, defence, semiconductors |
+| Radia Perlman | Network engineering: inventor of the Spanning Tree Protocol (DEC, 1985); MIT maths then computer science PhD; BBN, DEC, Sun, Intel | [Internet Hall of Fame](https://www.internethalloffame.org/inductee/radia-perlman/) |
+| Bruce Schneier | Security: founder and CTO of Counterpane Internet Security; fellow and lecturer, Harvard Kennedy School | [schneier.com bio](https://www.schneier.com/blog/about/bio/) |
+| David Patterson | Computer architecture: RISC pioneer at UC Berkeley, RISC-V, Google Distinguished Engineer, 2017 Turing Award | [ACM](https://awards.acm.org/award_winners/patterson_2316693) |
 
-Analysis grid (one per person; each statement needs a fact, as the course asks):
-
-| Field | Notes |
-|---|---|
-| Name, job title, employer, city | |
-| Training path (school, specialisation, year) | |
-| First job and key career move | |
-| Skills used daily (technical + soft) | |
-| Role of an international mobility in their path | |
-| Advice they gave you | |
-| What you will copy / what you will do differently | |
-
-Interview questions: What does a typical week look like? Which technical skills are used daily and which did you learn on the job? What was the decisive experience of your early career? How did an international experience help? What would you do differently at my stage? Which projects or certifications would you value in a junior? Which skills will matter in 5 years?
+Facts come from the sources above; the "what I take from it" texts on the site are your own analysis (edit them in your own words).
+These are public figures, not people you interviewed. The course suggests MyJobGlasses or alumni interviews: if you can interview a real
+professional per profile, add them in `app/src/data/career.ts` (same structure). Interview questions: What does a typical week look like?
+Which skills do you use daily? What was the decisive experience of your early career? How did an international experience help?
+What would you do differently at my stage?
 
 ---
 
-## 4. International mobility projects (17 weeks, semester 9) — proposals
+## 4. International mobility projects (17 weeks, semester 9)
 
-One project per role model. These are ideas to validate with the PPP tutor and the international office, not commitments. Check each target's real programmes before you cite it.
+Ideas to confirm with the PPP tutor and the international office, not commitments.
 
-| # | Aligned with | Idea | Why |
+| # | Aligned with | Idea | Builds on |
 |---|---|---|---|
-| 1 | Network / systems engineer | Network or infrastructure team of a company in Germany, the Netherlands or Ireland | Large infrastructure and cloud ecosystems; extends your Cisco/VLAN/OSPF/QoS internship work |
-| 2 | Cybersecurity engineer | Security team or research lab in Canada (Québec, French-speaking) or Estonia | Strong security ecosystems; builds on your Kali/pentest lab |
-| 3 | Embedded / FPGA engineer | Embedded or hardware lab/company in Switzerland or Germany | Strong embedded and FPGA industry; builds on your VHDL SPI project |
+| 1 | Radia Perlman | Network/infrastructure team (operator, cloud provider or Internet exchange), Netherlands or Germany | Cisco internship: VLAN, OSPF, QoS |
+| 2 | Bruce Schneier | Security team or cybersecurity research lab, Québec, Canada | Kali pentest lab |
+| 3 | David Patterson | Hardware design lab or company (FPGA, RISC-V), Switzerland | VHDL SPI controller on FPGA |
 
-Also required for the diploma (from the course slides): English B2+ by S9, 17-week mobility in S9, 40 h civic engagement in S9, internships in S6 and S8.
+Also required for the diploma (course slides): English B2+ by S9, 17-week mobility in S9, 40 h civic engagement in S9, internships in S6 and S8.

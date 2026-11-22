@@ -36,7 +36,7 @@ export default function Navbar() {
     { label: t(nav.internships, lang), href: "#internships" },
     { label: t(nav.projects, lang), href: "#projects" },
     { label: t(nav.skills, lang), href: "#skills" },
-    { label: t(nav.career, lang), href: "#career" },
+    { label: t(nav.career, lang), href: "#ppp" },
     { label: t(nav.contact, lang), href: "#contact" },
   ];
 
@@ -80,12 +80,12 @@ export default function Navbar() {
           </button>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollTo(link.href)}
-                className="px-4 py-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5"
+                className="px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5"
               >
                 {link.label}
               </button>
@@ -93,7 +93,7 @@ export default function Navbar() {
           </div>
 
           {/* Language Toggle + CTA Button */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden xl:flex items-center gap-2">
             <LangToggle lang={lang} onToggle={toggleLang} />
             <button
               onClick={() => scrollTo("#contact")}
@@ -104,7 +104,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile: Lang Toggle + Menu Button */}
-          <div className="flex items-center gap-1 md:hidden">
+          <div className="flex items-center gap-1 xl:hidden">
             <LangToggle lang={lang} onToggle={toggleLang} className="px-2" />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -118,7 +118,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden glass-strong border-t border-white/10">
+        <div className="xl:hidden glass-strong border-t border-white/10">
           <div className="px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <button

@@ -7,7 +7,7 @@ import Internships from "@/sections/Internships";
 import Projects from "@/sections/Projects";
 import Skills from "@/sections/Skills";
 import Experience from "@/sections/Experience";
-import Career from "@/sections/Career";
+import Ppp from "@/sections/Ppp";
 import Contact from "@/sections/Contact";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
         <Projects />
         <Skills />
         <Experience />
-        <Career />
+        <Ppp />
         <Contact />
       </main>
       <Footer />
