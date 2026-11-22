@@ -1,0 +1,60 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=9mm,bottom=8mm,left=13mm,right=13mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{0E7490}
+\definecolor{darktext}{HTML}{1F2937}
+\definecolor{graytext}{HTML}{4B5563}
+\color{darktext}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdftitle={CV - Mohamed Amine Ziani}}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt,label=\textcolor{accent}{\textbullet}}
+\usepackage{tabularx}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\newcommand{\sect}[1]{\vspace{5pt}{\color{accent}\bfseries\fontsize{9.6}{11}\selectfont\MakeUppercase{#1}}\\[-1pt]{\color{accent}\rule{\linewidth}{0.7pt}}\vspace{2pt}\par}
+\newcommand{\row}[2]{\noindent{\bfseries #1}\hfill{\color{graytext}\itshape #2}\par}
+
+\begin{document}
+\fontsize{8.9}{11.4}\selectfont
+\begin{center}{\fontsize{21}{23}\selectfont\bfseries Mohamed Amine Ziani}\\[2pt]{\fontsize{10.2}{12}\selectfont\bfseries\color{accent} Engineering Student, ENSEEIHT — Computer Architecture \& Networks (ASR)}\\[1pt]{\bfseries Seeking a 2-month internship between June and September 2027}\\[3pt]{\fontsize{8.4}{10}\selectfont \href{mailto:medamine.ziani85@gmail.com}{medamine.ziani85@gmail.com}\ \textcolor{graytext}{\textbar}\ +33 7 73 96 39 17\ \textcolor{graytext}{\textbar}\ Toulouse, France\ \textcolor{graytext}{\textbar}\ \href{https://linkedin.com/in/mohamed-amine-ziani}{linkedin.com/in/mohamed-amine-ziani}\ \textcolor{graytext}{\textbar}\ \href{https://github.com/medamineziani}{github.com/medamineziani}\ \textcolor{graytext}{\textbar}\ \href{https://medamineziani.github.io/portfolio}{medamineziani.github.io/portfolio}}\end{center}\vspace{-6pt}{\color{accent}\rule{\linewidth}{1.2pt}}
+\sect{Profile}2nd-year engineering student at ENSEEIHT (ASR), coming from scientific preparatory classes in Morocco. I build systems end to end: VHDL on FPGA and systems C (fork/exec, pipes, signals), Cisco networking (VLAN, OSPF, QoS), computer vision and web applications. Two company internships (IT networking, Industry 4.0).
+\sect{Education}
+\row{ENSEEIHT · INP Toulouse — 2nd-year engineering, Computer Architecture \& Networks (ASR)}{2026 – present}
+{\color{graytext}\itshape Systems architecture, networks, operating systems, computer security}\par\vspace{2pt}
+\row{ENSEEIHT · INP Toulouse — 1st-year engineering, Digital Sciences}{2025 – 2026}
+{\color{graytext}\itshape Algorithms, programming, databases, networks, operating systems}\par\vspace{2pt}
+\row{Scientific preparatory classes (CPGE, Morocco) — Mathematics, Physics, Computer Science}{2023 – 2025}
+{\color{graytext}\itshape Baccalaureate, Mathematical Sciences B, with honors (2023)}\par\vspace{2pt}
+\sect{Professional experience}
+\row{Computer Engineer (internship) — AGRIDATA CONSULTING, PackOne team}{Jul 2026 · 3 mos}
+{\color{graytext}\itshape Agadir area (hybrid) · Two Industry 4.0 projects}
+\begin{itemize}\item Built a client/server IoT simulator in Python/C (TCP/IP sockets) for an industrial scale and a pallet scanner (gross weight, container ID).
+\item Designed the target network of a packaging station in Cisco Packet Tracer: VLAN segmentation, OSPF dynamic routing, QoS prioritizing real-time weighing traffic.
+\item Developed a Python/OpenCV PoC for pallet quality control (height, number of carton layers) from an overhead camera, validated against a reference configuration per pallet type.\end{itemize}\vspace{2pt}
+\row{IT Network Engineer (internship) — FIRST COMPÉTENCE}{Jun 2026 · 1 mo}
+{\color{graytext}\itshape Agadir (on site) · IT infrastructure and network administration}
+\begin{itemize}\item Analyzed the network architecture, IP addressing, VLANs, DHCP/DNS configuration, troubleshooting and network security; documented the company's IT infrastructure.\end{itemize}\vspace{2pt}
+\sect{Projects}
+\noindent{\bfseries SPI Joystick Controller on FPGA} {\bfseries\color{accent}$\cdot$ VHDL · Nexys 4 DDR}\hfill{\itshape \href{https://github.com/medamineziani/fpga-joystick-spi}{github.com/medamineziani/fpga-joystick-spi}}\par
+SPI master: single-byte exchange (state machine), then 3- and 5-byte frames decoding the Pmod JSTK's 10-bit X/Y axes and 3 buttons, with a testbench.\par\vspace{2pt}
+\noindent{\bfseries Minishell: Command Interpreter} {\bfseries\color{accent}$\cdot$ C · POSIX}\hfill{\itshape \href{https://github.com/medamineziani/minishell}{github.com/medamineziani/minishell}}\par
+fork/execvp/waitpid, pipelines, \textless{}, \textgreater{} and \textgreater{}\textgreater{} redirections, background jobs, SIGCHLD/SIGINT; built with -Wall -Wextra -Werror.\par\vspace{2pt}
+\noindent{\bfseries PowerForm AI} {\bfseries\color{accent}$\cdot$ Next.js · TypeScript · Supabase · Stripe}\hfill{\itshape \href{https://github.com/medamineziani/powerform-ai}{github.com/medamineziani/powerform-ai}}\par
+SaaS MVP for AI powerlifting video analysis: Supabase auth and database, Stripe payments, Claude API, PDF reports, deployed on Vercel.\par\vspace{2pt}
+\noindent{\bfseries Medora: Medical Practice SaaS} {\bfseries\color{accent}$\cdot$ Next.js · Prisma · PostgreSQL}\hfill{\itshape }\par
+Multi-practice SaaS (per-practice data isolation), Owner/Doctor/Secretary roles, scheduling, billing, reminders.\par\vspace{2pt}
+\noindent{\bfseries Cybersecurity Lab} {\bfseries\color{accent}$\cdot$ Kali Linux · VirtualBox}\hfill{\itshape }\par
+Isolated pentesting environment (Kali VM + Ubuntu target): reconnaissance, exploitation, post-exploitation.\par\vspace{2pt}
+\sect{Skills}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{29mm}X@{}}\textbf{Languages} & C, Python, Java, SQL, VHDL, TypeScript\\[1pt]\textbf{Systems \& networks} & Linux, POSIX (fork/exec, pipes, signals), TCP/IP, VLAN, OSPF, QoS, DHCP/DNS, Cisco Packet Tracer\\[1pt]\textbf{Architecture} & VHDL, FPGA (Nexys 4 DDR), finite-state machines, GHDL\\[1pt]\textbf{AI \& vision} & OpenCV, MediaPipe, YOLO, Claude API\\[1pt]\textbf{Web \& data} & Next.js, React, Prisma, PostgreSQL, Pandas, NumPy\\[1pt]\textbf{Security \& tools} & Kali Linux (pentesting), Git, Docker, LaTeX · Agile, unit testing, code review\end{tabularx}
+\sect{Leadership}\row{BDE Lead (Student Union) and class representative — CPGE, Morocco}{2023 – 2025}
+Ran math/CS workshops for 10–20 participants, created teaching materials, coordinated events; mediated with the administration.\par
+\sect{Languages \& interests}\textbf{Languages :} French (native) · English (fluent) · Arabic (fluent) · Tamazight (fluent)\\\textbf{Interests :} Powerlifting · Swimming · Football · LeetCode / Codeforces · AI watch · Open source
+\end{document}

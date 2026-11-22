@@ -291,7 +291,7 @@ export const internships: Internship[] = [
     role: { fr: "Ingénieur Informatique", en: "Computer Engineer" },
     company: "AGRIDATA CONSULTING",
     companyType: { fr: "Stage", en: "Internship" },
-    period: { fr: "Juil. 2026 - Présent · 3 mois", en: "Jul 2026 - Present · 3 mos" },
+    period: { fr: "Juil. 2026 · 3 mois", en: "Jul 2026 · 3 mos" },
     location: { fr: "Région d'Agadir · Hybride", en: "Agadir Metropolitan Area · Hybrid" },
     summary: {
       fr: "Stage de fin de première année à l'ENSEEIHT, sur deux projets Industrie 4.0 combinant programmation système, réseaux et vision par ordinateur au sein de l'équipe PackOne.",

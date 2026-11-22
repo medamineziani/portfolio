@@ -7,6 +7,7 @@ export const nav = {
   internships: { fr: "Stages", en: "Internships" } as Bilingual,
   projects: { fr: "Projets", en: "Projects" } as Bilingual,
   skills: { fr: "Compétences", en: "Skills" } as Bilingual,
+  career: { fr: "Carrière", en: "Career" } as Bilingual,
   contact: { fr: "Contact", en: "Contact" } as Bilingual,
   contactCta: { fr: "Me contacter", en: "Get in touch" } as Bilingual,
 };
@@ -110,4 +111,19 @@ export const contact = {
 export const footer = {
   madeIn: { fr: "Fait avec", en: "Made with" } as Bilingual,
   inToulouse: { fr: "à Toulouse", en: "in Toulouse" } as Bilingual,
+};
+
+export const career = {
+  badge: { fr: "Carrière", en: "Career" } as Bilingual,
+  title: { fr: "Projet professionnel", en: "Career Project" } as Bilingual,
+  subtitle: {
+    fr: "Mes CV en français et en anglais, mon profil LinkedIn et mon projet professionnel.",
+    en: "My CVs in French and English, my LinkedIn profile and my career project.",
+  } as Bilingual,
+  download: { fr: "Télécharger (PDF)", en: "Download (PDF)" } as Bilingual,
+  linkedin: { fr: "Profil LinkedIn", en: "LinkedIn profile" } as Bilingual,
+  linkedinOpen: { fr: "Ouvrir LinkedIn", en: "Open LinkedIn" } as Bilingual,
+  pitch: { fr: "Elevator pitch (en anglais)", en: "Elevator pitch" } as Bilingual,
+  roleModels: { fr: "Modèles professionnels", en: "Role models" } as Bilingual,
+  mobility: { fr: "Projets de mobilité internationale", en: "International mobility projects" } as Bilingual,
 };

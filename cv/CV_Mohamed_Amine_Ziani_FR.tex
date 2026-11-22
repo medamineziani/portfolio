@@ -1,0 +1,60 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[top=9mm,bottom=8mm,left=13mm,right=13mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{0E7490}
+\definecolor{darktext}{HTML}{1F2937}
+\definecolor{graytext}{HTML}{4B5563}
+\color{darktext}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdftitle={CV - Mohamed Amine Ziani}}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=11pt,itemsep=0pt,topsep=1pt,parsep=0pt,label=\textcolor{accent}{\textbullet}}
+\usepackage{tabularx}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\newcommand{\sect}[1]{\vspace{5pt}{\color{accent}\bfseries\fontsize{9.6}{11}\selectfont\MakeUppercase{#1}}\\[-1pt]{\color{accent}\rule{\linewidth}{0.7pt}}\vspace{2pt}\par}
+\newcommand{\row}[2]{\noindent{\bfseries #1}\hfill{\color{graytext}\itshape #2}\par}
+
+\begin{document}
+\fontsize{8.9}{11.4}\selectfont
+\begin{center}{\fontsize{21}{23}\selectfont\bfseries Mohamed Amine Ziani}\\[2pt]{\fontsize{10.2}{12}\selectfont\bfseries\color{accent} Élève-ingénieur ENSEEIHT — Architecture des Ordinateurs et Réseaux (ASR)}\\[1pt]{\bfseries Recherche un stage de 2 mois entre juin et septembre 2027}\\[3pt]{\fontsize{8.4}{10}\selectfont \href{mailto:medamine.ziani85@gmail.com}{medamine.ziani85@gmail.com}\ \textcolor{graytext}{\textbar}\ +33 7 73 96 39 17\ \textcolor{graytext}{\textbar}\ Toulouse, France\ \textcolor{graytext}{\textbar}\ \href{https://linkedin.com/in/mohamed-amine-ziani}{linkedin.com/in/mohamed-amine-ziani}\ \textcolor{graytext}{\textbar}\ \href{https://github.com/medamineziani}{github.com/medamineziani}\ \textcolor{graytext}{\textbar}\ \href{https://medamineziani.github.io/portfolio}{medamineziani.github.io/portfolio}}\end{center}\vspace{-6pt}{\color{accent}\rule{\linewidth}{1.2pt}}
+\sect{Profil}Élève-ingénieur en 2\textsuperscript{e} année à l'ENSEEIHT (ASR), issu des CPGE scientifiques au Maroc. Je conçois des systèmes de bout en bout : VHDL sur FPGA et C système (fork/exec, tubes, signaux), réseaux Cisco (VLAN, OSPF, QoS), vision par ordinateur et applications web. Deux stages en entreprise (réseau IT, Industrie 4.0).
+\sect{Formation}
+\row{ENSEEIHT · INP Toulouse — 2\textsuperscript{e} année ingénieur, Architecture des Ordinateurs et Réseaux (ASR)}{2026 – présent}
+{\color{graytext}\itshape Architecture des systèmes, réseaux, systèmes d'exploitation, sécurité informatique}\par\vspace{2pt}
+\row{ENSEEIHT · INP Toulouse — 1\textsuperscript{r}\textsuperscript{e} année ingénieur, Sciences du Numérique}{2025 – 2026}
+{\color{graytext}\itshape Algorithmique, programmation, bases de données, réseaux, systèmes d'exploitation}\par\vspace{2pt}
+\row{CPGE scientifique (Maroc) — Mathématiques, Physique, Informatique}{2023 – 2025}
+{\color{graytext}\itshape Baccalauréat Sciences Mathématiques B, mention Bien (2023)}\par\vspace{2pt}
+\sect{Expérience professionnelle}
+\row{Ingénieur informatique (stage) — AGRIDATA CONSULTING, équipe PackOne}{Juil. 2026 · 3 mois}
+{\color{graytext}\itshape Région d'Agadir (hybride) · Deux projets Industrie 4.0}
+\begin{itemize}\item Simulateur IoT client/serveur en Python/C (sockets TCP/IP) d'une balance industrielle et d'un scanner de palettes (poids brut, identifiant de contenant).
+\item Conception de l'infrastructure réseau cible d'une station de conditionnement sous Cisco Packet Tracer : segmentation VLAN, routage dynamique OSPF, QoS priorisant le trafic de pesée temps réel.
+\item PoC Python/OpenCV de contrôle qualité des palettes (hauteur, nombre de couches de cartons) depuis une caméra en plongée, validé face à une configuration de référence par type de palette.\end{itemize}\vspace{2pt}
+\row{Ingénieur réseaux IT (stage) — FIRST COMPÉTENCE}{Juin 2026 · 1 mois}
+{\color{graytext}\itshape Agadir (sur site) · Infrastructure IT et administration réseau}
+\begin{itemize}\item Analyse de l'architecture réseau, adressage IP, VLANs, configuration DHCP/DNS, dépannage et sécurité réseau ; documentation de l'infrastructure IT de l'entreprise.\end{itemize}\vspace{2pt}
+\sect{Projets}
+\noindent{\bfseries Contrôleur SPI pour joystick sur FPGA} {\bfseries\color{accent}$\cdot$ VHDL · Nexys 4 DDR}\hfill{\itshape \href{https://github.com/medamineziani/fpga-joystick-spi}{github.com/medamineziani/fpga-joystick-spi}}\par
+Maître SPI : échange d'un octet (automate à états), trames de 3 puis 5 octets décodant axes X/Y sur 10 bits et 3 boutons du Pmod JSTK, banc de test.\par\vspace{2pt}
+\noindent{\bfseries Minishell : interpréteur de commandes} {\bfseries\color{accent}$\cdot$ C · POSIX}\hfill{\itshape \href{https://github.com/medamineziani/minishell}{github.com/medamineziani/minishell}}\par
+fork/execvp/waitpid, pipelines, redirections \textless{}, \textgreater{} et \textgreater{}\textgreater{}, jobs en arrière-plan, SIGCHLD/SIGINT ; compilé en -Wall -Wextra -Werror.\par\vspace{2pt}
+\noindent{\bfseries PowerForm AI} {\bfseries\color{accent}$\cdot$ Next.js · TypeScript · Supabase · Stripe}\hfill{\itshape \href{https://github.com/medamineziani/powerform-ai}{github.com/medamineziani/powerform-ai}}\par
+MVP SaaS d'analyse vidéo de powerlifting par IA : authentification et base Supabase, paiements Stripe, API Claude, rapports PDF, déployé sur Vercel.\par\vspace{2pt}
+\noindent{\bfseries Medora : SaaS de gestion de cabinet médical} {\bfseries\color{accent}$\cdot$ Next.js · Prisma · PostgreSQL}\hfill{\itshape }\par
+SaaS multi-cabinets (isolation des données par cabinet), rôles Titulaire/Médecin/Secrétaire, agenda, facturation, rappels.\par\vspace{2pt}
+\noindent{\bfseries Laboratoire de Cybersécurité} {\bfseries\color{accent}$\cdot$ Kali Linux · VirtualBox}\hfill{\itshape }\par
+Environnement de pentest isolé (VM Kali + cible Ubuntu) : reconnaissance, exploitation, post-exploitation.\par\vspace{2pt}
+\sect{Compétences}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{29mm}X@{}}\textbf{Langages} & C, Python, Java, SQL, VHDL, TypeScript\\[1pt]\textbf{Systèmes \& réseaux} & Linux, POSIX (fork/exec, tubes, signaux), TCP/IP, VLAN, OSPF, QoS, DHCP/DNS, Cisco Packet Tracer\\[1pt]\textbf{Architecture} & VHDL, FPGA (Nexys 4 DDR), automates à états, GHDL\\[1pt]\textbf{IA \& vision} & OpenCV, MediaPipe, YOLO, API Claude\\[1pt]\textbf{Web \& données} & Next.js, React, Prisma, PostgreSQL, Pandas, NumPy\\[1pt]\textbf{Sécurité \& outils} & Kali Linux (pentest), Git, Docker, LaTeX · Agile, tests unitaires, revue de code\end{tabularx}
+\sect{Engagement}\row{Responsable BDE (Bureau des Élèves) et délégué de classe — CPGE, Maroc}{2023 – 2025}
+Ateliers maths/informatique pour 10 à 20 participants, supports pédagogiques, coordination d'événements ; médiation avec l'administration.\par
+\sect{Langues \& centres d'intérêt}\textbf{Langues :} Français (langue maternelle) · Anglais (courant) · Arabe (courant) · Tamazight (courant)\\\textbf{Centres d'intérêt :} Powerlifting · Natation · Football · LeetCode / Codeforces · Veille IA · Open source
+\end{document}

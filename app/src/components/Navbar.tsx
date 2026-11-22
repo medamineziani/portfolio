@@ -36,6 +36,7 @@ export default function Navbar() {
     { label: t(nav.internships, lang), href: "#internships" },
     { label: t(nav.projects, lang), href: "#projects" },
     { label: t(nav.skills, lang), href: "#skills" },
+    { label: t(nav.career, lang), href: "#career" },
     { label: t(nav.contact, lang), href: "#contact" },
   ];
 

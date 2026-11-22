@@ -1,32 +1,23 @@
-# CV — LaTeX source
+# CV (FR / EN)
 
-`cv_mohamed_amine_ziani.tex` — one-page French CV, content and branding (cyan
-accent) matched to the e-portfolio in `app/`. Built with plain `article` +
-`tabularx` + `fontawesome5` + `babel[french]` — compiles with standard
-pdfLaTeX, no XeLaTeX/LuaLaTeX or special fonts required.
+One-page CVs, same content as the e-portfolio (`app/src/data/portfolio.ts`).
+Single source: the `CONTENT` dict in `build_cv.py`.
 
-## Compile (no install needed)
+| File | What |
+|---|---|
+| `CV_Mohamed_Amine_Ziani_FR.pdf`, `_EN.pdf` | Final PDFs (also copied to `app/public/cv/`, downloadable on the site) |
+| `CV_Mohamed_Amine_Ziani_FR.tex`, `_EN.tex` | LaTeX versions generated from the same data |
 
-1. Go to [overleaf.com](https://www.overleaf.com) → **New Project** → **Upload Project** (or **Blank Project** then replace `main.tex` with this file's content).
-2. Click **Recompile**. Done — download the PDF from there.
-
-## Compile locally (optional)
-
-Needs a TeX distribution (MiKTeX on Windows, TeX Live on Linux/Mac):
+## Rebuild
 
 ```bash
-pdflatex cv_mohamed_amine_ziani.tex
-pdflatex cv_mohamed_amine_ziani.tex   # run twice so the header rule/links settle
+python cv/build_cv.py --html   # PDF via headless Chrome/Edge (used for the current PDFs)
+python cv/build_cv.py          # PDF via pdflatex, if installed
 ```
 
-## Updating it
+The `.tex` files have not been compiled yet (no LaTeX engine was available when they were generated).
+Compile them on Overleaf (upload the `.tex`, default pdfLaTeX) or locally with `pdflatex`, and skim the result
+before using them; the PDFs in this folder come from the HTML renderer, which was checked page by page.
 
-Content mirrors `app/src/data/portfolio.ts` — when that file changes
-(new internship, project, skill...), update this `.tex` to match so the CV
-and the e-portfolio never drift apart. Keep it to one page: trim a project
-or a bullet before shrinking margins/font size.
-
-This file was not auto-compiled when generated (no LaTeX engine was
-available in that environment) — compile once via Overleaf and skim the
-PDF before sending it anywhere; if it spills onto a second page, drop the
-"Agent IA de recherche de logement" project entry first.
+Before sending: set your school address `prenom.nom@etu.toulouse-inp.fr` in `EMAIL` (required by the CAM course),
+then rebuild. Keep dates, titles and project names identical on the CV, LinkedIn and the e-portfolio.
