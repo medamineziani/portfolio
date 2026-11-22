@@ -7,6 +7,9 @@ import {
   LineChart,
   Home,
   Shield,
+  Stethoscope,
+  Monitor,
+  Store,
   Code2,
   Github,
   Calendar,
@@ -25,6 +28,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   LineChart,
   Home,
   Shield,
+  Stethoscope,
+  Monitor,
+  Store,
 };
 
 export default function Projects() {

@@ -100,6 +100,42 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: { fr: "Medora : SaaS de gestion de cabinet médical", en: "Medora: Medical Practice SaaS" },
+    organization: { fr: "Projet personnel", en: "Personal project" },
+    year: "2026",
+    description: {
+      fr: "SaaS multi-cabinets : dossiers patients, agenda, prise de rendez-vous en ligne, facturation, analytics et rappels WhatsApp/SMS/e-mail. Isolation des données par cabinet (multi-tenant), rôles Titulaire/Médecin/Secrétaire, authentification Auth.js, recherche instantanée PostgreSQL (pg_trgm), déploiement Vercel + Neon.",
+      en: "Multi-practice SaaS: patient records, scheduling, online booking, billing, analytics, and WhatsApp/SMS/e-mail reminders. Per-practice data isolation (multi-tenant), Owner/Doctor/Secretary roles, Auth.js authentication, PostgreSQL instant search (pg_trgm), deployed on Vercel + Neon.",
+    },
+    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Auth.js", "Multi-tenant", "Tailwind"],
+    icon: "Stethoscope",
+    githubUrl: null,
+  },
+  {
+    title: { fr: "Cabinet Dentaire : application desktop", en: "Dental Clinic Desktop App" },
+    organization: { fr: "Projet personnel", en: "Personal project" },
+    year: "2026",
+    description: {
+      fr: "Application Windows hors-ligne de gestion de cabinet dentaire dérivée de Medora : données 100 % locales (SQLite), architecture Electron sécurisée (processus principal isolé, IPC validé par Zod, verrouillage automatique de session), permissions par rôle, sauvegarde/restauration, 22 tests d'intégration et tests E2E, installateur Windows.",
+      en: "Offline Windows dental-clinic management app derived from Medora: fully local data (SQLite), hardened Electron architecture (isolated main process, Zod-validated IPC, automatic session lock), role permissions, backup/restore, 22 integration tests plus E2E tests, Windows installer.",
+    },
+    tags: ["Electron", "React", "TypeScript", "Prisma", "SQLite", "Zod", "Vitest"],
+    icon: "Monitor",
+    githubUrl: "https://github.com/medamineziani/cabinet-dentaire-desktop",
+  },
+  {
+    title: { fr: "Caisse : application de point de vente", en: "Caisse: Point-of-Sale App" },
+    organization: { fr: "Projet personnel", en: "Personal project" },
+    year: "2026",
+    description: {
+      fr: "Application de caisse multi-magasins : sessions de caisse, ventes, produits et catégories, stocks par magasin avec mouvements, clients, fournisseurs, rapports avec graphiques, gestion des utilisateurs par rôle et journal d'audit.",
+      en: "Multi-store point-of-sale app: cash sessions, sales, products and categories, per-store stock with movements, clients, suppliers, chart-based reports, role-based user management, and an audit log.",
+    },
+    tags: ["Next.js", "TypeScript", "Prisma", "NextAuth", "Recharts", "Tailwind"],
+    icon: "Store",
+    githubUrl: "https://github.com/medamineziani/caisse",
+  },
+  {
     title: { fr: "Deadlift AI", en: "Deadlift AI" },
     organization: { fr: "Projet personnel", en: "Personal project" },
     year: "2026",
@@ -259,8 +295,8 @@ export const internships: Internship[] = [
 export const responsibilities = [
   {
     role: {
-      fr: "Responsable de Club Académique",
-      en: "Academic Club Lead",
+      fr: "Responsable BDE (Bureau des Élèves)",
+      en: "BDE Lead (Student Union)",
     } as Bilingual,
     organization: { fr: "CPGE", en: "CPGE" } as Bilingual,
     period: { fr: "2023 - 2025", en: "2023 - 2025" } as Bilingual,
