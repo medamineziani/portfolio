@@ -17,7 +17,7 @@ export const personalInfo = {
   } as Bilingual,
   email: "medamine.ziani85@gmail.com",
   phone: "+33 7 73 96 39 17",
-  address: "12 rue des Blanchers, Toulouse",
+  address: "Toulouse, France",
   linkedin: "linkedin.com/in/mohamed-amine-ziani",
   linkedinUrl: "https://www.linkedin.com/in/mohamed-amine-ziani",
   github: "github.com/medamineziani",
